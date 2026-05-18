@@ -1,0 +1,276 @@
+{
+  "main": {
+    "id": "04bb7008e1d39d8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "3737b793f900ae0f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73d7c31304963086",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-Projects/智能旅行助手项目.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
+              "icon": "lucide-file",
+              "title": "智能旅行助手项目"
+            }
+          },
+          {
+            "id": "88793520c46a5ac8",
+            "type": "leaf",
+            "state": {
+              "type": "smart-release-notes-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-release-notes-view"
+            }
+          },
+          {
+            "id": "f8fa77eef8135976",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Templates/每日笔记模板.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "每日笔记模板"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1b23c7cbc9db3ae8",
+    "type": "split",
+    "children": [
+      {
+        "id": "31f41345123cb21a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52855cc729ce8734",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "e29befee68c841ab",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "bd474a681f3174f6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a3d99064ca510f5e",
+    "type": "split",
+    "children": [
+      {
+        "id": "e3a9e530f309e0b2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c108e5271339c391",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "04-Permanent/PEAS 模型.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "PEAS 模型 的出链列表"
+            }
+          },
+          {
+            "id": "cab97d9656f1583e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "674c55b1bc25b2f0",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "74db87ea22bb5bc7",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "04-Permanent/PEAS 模型.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "PEAS 模型 的大纲"
+            }
+          },
+          {
+            "id": "5d18b56e511a3cb2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "04-Permanent/PEAS 模型.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "PEAS 模型 的反向链接列表"
+            }
+          },
+          {
+            "id": "032e7a93448f096a",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 525.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian42-brat:BRAT": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "f8fa77eef8135976",
+  "lastOpenFiles": [
+    "Templates/概念卡片模板.md",
+    "01-Projects/智能旅行助手项目.md",
+    "未命名.base",
+    "02-Areas/第一章学习笔记 - 初识智能体.md",
+    "MOCs/Everything Claude Code 完全教程.md",
+    "MOCs/智能体核心概念图谱.md",
+    "反应式智能体.md",
+    "README.md",
+    "MOCs/AI Agent 知识总览.md",
+    "docs/chapter4/第四章 智能体经典范式构建.md",
+    "docs/_sidebar.md",
+    "智能体循环.md",
+    "04-Permanent/PEAS 模型.md",
+    "04-Permanent/智能体（Agent）.md",
+    "WebArena.md",
+    "ECC-TUTORIAL.md",
+    "Everything Claude Code 完全教程.md",
+    "00-Inbox/快速上手指南.md",
+    "MOCs/标签体系.md",
+    "docs/Preface.md",
+    "docs/_sidebar_en.md",
+    "未命名.canvas",
+    "docs/chapter1/Chapter1-Introduction-to-Agents.md",
+    "docs/chapter4/Chapter4-Building-Classic-Agent-Paradigms.md",
+    "en/chapter4/Chapter4-Building-Classic-Agent-Paradigms.md",
+    "en/chapter4",
+    "en",
+    "docs/chapter11/Chapter11-Agentic-RL.md",
+    "Dify.md",
+    "上下文注入.md",
+    "00-Inbox/快速上手指南.md.tmp.30464.e7a77415c46c",
+    "MOCs/智能体核心概念图谱.md.tmp.30464.643d734e0d82",
+    "04-Permanent/PEAS 模型.md.tmp.30464.e65b2b828abb",
+    "04-Permanent/ReAct 范式.md.tmp.30464.14893d5537a3",
+    "README.md.tmp.30464.3a77411954ad",
+    "01-Projects/智能旅行助手项目.md.tmp.30464.8ce68c64fdf0",
+    "02-Areas/第一章学习笔记 - 初识智能体.md.tmp.30464.112e8413290f",
+    "docs/images/9-figures/9-3.png",
+    "docs/images/9-figures/9-2.webp",
+    "docs/images/9-figures/9-1.webp",
+    "docs/images/8-figures/8-9.png",
+    "docs/images/8-figures/8-8.png",
+    "docs/images/8-figures/8-7.png",
+    "docs/images/8-figures/8-6.png",
+    "docs/images/8-figures/8-5.png",
+    "docs/images/8-figures/8-4.png",
+    "docs/images/8-figures/8-3.png"
+  ]
+}
