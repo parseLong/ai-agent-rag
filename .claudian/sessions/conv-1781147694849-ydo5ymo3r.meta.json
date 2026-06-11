@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781147694849-ydo5ymo3r",
+  "providerId": "claude",
+  "title": "将D:\\ai-graph-rag\\AI Agent知识图谱\\02-Areas\\Awesome Age...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781147694849,
+  "updatedAt": 1781149400047,
+  "lastResponseAt": 1781148539975,
+  "sessionId": "7657c617-2447-490a-959e-ba3833fc5383",
+  "providerState": {
+    "providerSessionId": "7657c617-2447-490a-959e-ba3833fc5383"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 45570,
+    "cacheCreationInputTokens": 504,
+    "cacheReadInputTokens": 145890,
+    "contextWindow": 200000,
+    "contextTokens": 191964,
+    "percentage": 96,
+    "contextWindowIsAuthoritative": true
+  }
+}

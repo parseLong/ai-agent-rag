@@ -1,0 +1,24 @@
+{
+  "id": "conv-1779796436555-wak2pvcly",
+  "providerId": "claude",
+  "title": "帮我梳理一下这个文章里的代码，整理出代码的核心",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1779796436555,
+  "updatedAt": 1780473217213,
+  "lastResponseAt": 1779842857443,
+  "sessionId": "03fd306b-ad1b-4594-b560-0fd13938c525",
+  "providerState": {
+    "providerSessionId": "03fd306b-ad1b-4594-b560-0fd13938c525"
+  },
+  "currentNote": "Clippings/从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货）.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 46474,
+    "cacheCreationInputTokens": 5510,
+    "cacheReadInputTokens": 103356,
+    "contextWindow": 200000,
+    "contextTokens": 155340,
+    "percentage": 78,
+    "contextWindowIsAuthoritative": true
+  }
+}

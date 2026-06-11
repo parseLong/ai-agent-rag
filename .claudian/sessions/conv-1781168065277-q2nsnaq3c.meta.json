@@ -1,0 +1,26 @@
+{
+  "id": "conv-1781168065277-q2nsnaq3c",
+  "providerId": "claude",
+  "title": "提炼一下D:\\Code\\claude-code目录下关于claude code源码分析的html到我...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781168065278,
+  "updatedAt": 1781174846958,
+  "lastResponseAt": 1781168445746,
+  "sessionId": "9e37569f-eea2-4725-ba4e-5a35538306f7",
+  "providerState": {
+    "providerSessionId": "9e37569f-eea2-4725-ba4e-5a35538306f7"
+  },
+  "externalContextPaths": [
+    "D:\\ai-graph-rag\\AI Agent知识图谱"
+  ],
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 45488,
+    "cacheCreationInputTokens": 4457,
+    "cacheReadInputTokens": 110193,
+    "contextWindow": 200000,
+    "contextTokens": 160138,
+    "percentage": 80,
+    "contextWindowIsAuthoritative": true
+  }
+}

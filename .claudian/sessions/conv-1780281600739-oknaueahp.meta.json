@@ -1,0 +1,24 @@
+{
+  "id": "conv-1780281600739-oknaueahp",
+  "providerId": "claude",
+  "title": "Implement this plan:",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1780281600739,
+  "updatedAt": 1780285166100,
+  "lastResponseAt": 1780284303252,
+  "sessionId": "07e8f244-79a3-4825-9dfc-586b1a3635a3",
+  "providerState": {
+    "providerSessionId": "07e8f244-79a3-4825-9dfc-586b1a3635a3"
+  },
+  "currentNote": "Clippings/OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 50060,
+    "cacheCreationInputTokens": 102,
+    "cacheReadInputTokens": 189487,
+    "contextWindow": 200000,
+    "contextTokens": 239649,
+    "percentage": 100,
+    "contextWindowIsAuthoritative": true
+  }
+}

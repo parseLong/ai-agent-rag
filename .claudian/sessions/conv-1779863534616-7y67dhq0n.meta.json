@@ -1,0 +1,24 @@
+{
+  "id": "conv-1779863534616-7y67dhq0n",
+  "providerId": "claude",
+  "title": "提取这篇文章的内容到笔记中",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1779863534616,
+  "updatedAt": 1779863971964,
+  "lastResponseAt": 1779863752944,
+  "sessionId": "9c985ea0-de11-4b37-a0dd-f38e695764f8",
+  "providerState": {
+    "providerSessionId": "9c985ea0-de11-4b37-a0dd-f38e695764f8"
+  },
+  "currentNote": "Clippings/工程技术：在智能体优先的世界中利用 Codex.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 42971,
+    "cacheCreationInputTokens": 3735,
+    "cacheReadInputTokens": 36100,
+    "contextWindow": 200000,
+    "contextTokens": 82806,
+    "percentage": 41,
+    "contextWindowIsAuthoritative": true
+  }
+}

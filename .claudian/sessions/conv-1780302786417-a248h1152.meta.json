@@ -1,0 +1,167 @@
+{
+  "id": "conv-1780302786417-a248h1152",
+  "providerId": "claude",
+  "title": "术语堆叠、缺乏解释的内容重新调整一下",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1780302786417,
+  "updatedAt": 1780313016635,
+  "lastResponseAt": 1780303690762,
+  "sessionId": "7474a5be-040f-4047-9c68-a0e0298f7e9a",
+  "providerState": {
+    "providerSessionId": "7474a5be-040f-4047-9c68-a0e0298f7e9a",
+    "subagentData": {
+      "toolu_tool-fdf0ab4ab09c4216926992e0dd08260b": {
+        "id": "toolu_tool-fdf0ab4ab09c4216926992e0dd08260b",
+        "description": "搜索相关笔记获取上下文",
+        "prompt": "在 D:\\ai-graph-rag\\AI Agent知识图谱 目录下，搜索以下笔记文件并读取它们的前20行，帮我确认这些笔记确实存在以及它们的大致内容方向：\n\n1. OpenClaw架构深度解析（可能在 04-Permanent 或类似目录下）\n2. OpenClaw vs Hermes 架构对比\n3. 智能体（Agent）\n4. 记忆系统\n5. 驭程工程 或 驾驭工程\n\n只需要告诉我每个文件是否存在，以及它们的路径和大致方向。",
+        "status": "completed",
+        "toolCalls": [
+          {
+            "id": "toolu_036c42c71382400f8a4b97ae",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/*OpenClaw*架构*"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "03-Resources\\工程实践\\玩转OpenClaw，你需要了解的：核心架构、运作原理、Agent部署步骤.md\nClippings\\OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘.md\n04-Permanent\\综合\\OpenClaw vs Hermes 架构对比.md\n04-Permanent\\应用场景\\OpenClaw架构深度解析.md"
+          },
+          {
+            "id": "toolu_897375b8167d41aaae2d8c2f",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/*OpenClaw*Hermes*对比*"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "04-Permanent\\综合\\OpenClaw vs Hermes 架构对比.md"
+          },
+          {
+            "id": "toolu_0f7d626500bc4e6fb6d7dd73",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/*智能体*"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "03-Resources\\Hello-Agent\\docs\\chapter14\\第十四章 自动化深度研究智能体.md\n03-Resources\\Hello-Agent\\docs\\chapter10\\第十章 智能体通信协议.md\n03-Resources\\Hello-Agent\\docs\\chapter12\\第十二章 智能体性能评估.md\n03-Resources\\Hello-Agent\\docs\\chapter5\\第五章 基于低代码平台的智能体搭建.md\n03-Resources\\Hello-Agent\\docs\\chapter1\\第一章 初识智能体.md\n.smart-env\\multi\\02-Areas_第一章学习笔记_-_初识智能体_md.ajson\n.smart-env\\multi\\04-Permanent_智能体（Agent）_md.ajson\n.smart-env\\multi\\MOCs_智能体核心概念图谱_md.ajson\n.smart-env\\multi\\docs_chapter4_第四章_智能体经典范式构建_md.ajson\n.smart-env\\multi\\docs_chapter1_第一章_初识智能体_md.ajson\n.smart-env\\multi\\docs_chapter12_第十二章_智能体性能评估_md.ajson\n.smart-env\\multi\\docs_chapter10_第十章_智能体通信协议_md.ajson\n.smart-env\\multi\\docs_chapter14_第十四章_自动化深度研究智能体_md.ajson\n.smart-env\\multi\\docs_chapter2_第二章_智能体发展史_md.ajson\n.smart-env\\multi\\docs_chapter5_第五章_基于低代码平台的智能体搭建_md.ajson\n03-Resources\\Hello-Agent\\docs\\chapter4\\第四章 智能体经典范式构建.md\n03-Resources\\Hello-Agent\\docs\\chapter2\\第二章 智能体发展史.md\n04-Permanent\\工具与框架\\智能体通信协议对比.md\n01-Projects\\自动化深度研究智能体.md\n04-Permanent\\核心技术\\多智能体\\智能体通信协议.md\n03-Resources\\ECC-Everything-Claude-Code\\ECC智能体设计模式.md\n03-Resources\\工具与框架\\万字长文  Claude Code 源码大起底：所有 Prompt、自修复机制、多智能体架构一网打尽.md\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\02-Areas_第一章学习笔记_-_初识智能体_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\02-Areas_第一章学习笔记_-_初识智能体_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\04-Permanent_智能体（Agent）_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\04-Permanent_智能体（Agent）_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\MOCs_智能体核心概念图谱_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\MOCs_智能体核心概念图谱_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter10_第十章_智能体通信协议_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter10_第十章_智能体通信协议_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter12_第十二章_智能体性能评估_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter12_第十二章_智能体性能评估_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter14_第十四章_自动化深度研究智能体_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter14_第十四章_自动化深度研究智能体_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\02-Areas_第一章学习笔记_-_初识智能体_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\04-Permanent_智能体（Agent）_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter1_第一章_初识智能体_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter1_第一章_初识智能体_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\02-Areas_第一章学习笔记_-_初识智能体_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter2_第二章_智能体发展史_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\MOCs_智能体核心概念图谱_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter2_第二章_智能体发展史_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\04-Permanent_智能体（Agent）_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter4_第四章_智能体经典范式构建_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter4_第四章_智能体经典范式构建_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\.smart-env\\multi\\docs_chapter5_第五章_基于低代码平台的智能体搭建_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\.smart-env\\multi\\docs_chapter5_第五章_基于低代码平台的智能体搭建_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\MOCs_智能体核心概念图谱_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter10_第十章_智能体通信协议_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter12_第十二章_智能体性能评估_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter14_第十四章_自动化深度研究智能体_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter10_第十章_智能体通信协议_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter12_第十二章_智能体性能评估_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter1_第一章_初识智能体_md.ajson\n.claude\\worktrees\\agent-a805526f76d76281d\\02-Areas\\第一章学习笔记 - 初识智能体.md\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter14_第十四章_自动化深度研究智能体_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter2_第二章_智能体发展史_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\02-Areas\\第一章学习笔记 - 初识智能体.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\02-Areas_第一章学习笔记_-_初识智能体_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter4_第四章_智能体经典范式构建_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter1_第一章_初识智能体_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\.smart-env\\multi\\docs_chapter5_第五章_基于低代码平台的智能体搭建_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter2_第二章_智能体发展史_md.ajson\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\04-Permanent_智能体（Agent）_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a805526f76d76281d\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter4_第四章_智能体经典范式构建_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\.smart-env\\multi\\docs_chapter5_第五章_基于低代码平台的智能体搭建_md.ajson\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\MOCs_智能体核心概念图谱_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\MOCs\\智能体核心概念图谱.md\n.claude\\worktrees\\agent-a805526f76d76281d\\MOCs\\智能体核心概念图谱.md\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\02-Areas\\第一章学习笔记 - 初识智能体.md\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter10_第十章_智能体通信协议_md.ajson\n.claude\\worktrees\\agent-a811369176b786d45\\02-Areas\\第一章学习笔记 - 初识智能体.md\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\MOCs\\智能体核心概念图谱.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter12_第十二章_智能体性能评估_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\docs\\chapter1\\第一章 初识智能体.md\n.claude\\worktrees\\agent-a805526f76d76281d\\docs\\chapter1\\第一章 初识智能体.md\n.claude\\worktrees\\agent-a811369176b786d45\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter14_第十四章_自动化深度研究智能体_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\docs\\chapter10\\第十章 智能体通信协议.md\n.claude\\worktrees\\agent-a805526f76d76281d\\docs\\chapter10\\第十章 智能体通信协议.md\n.claude\\worktrees\\agent-a811369176b786d45\\MOCs\\智能体核心概念图谱.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter1_第一章_初识智能体_md.ajson\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter2_第二章_智能体发展史_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\docs\\chapter1\\第一章 初识智能体.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter4_第四章_智能体经典范式构建_md.ajson\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\docs\\chapter12\\第十二章 智能体性能评估.md\n.claude\\worktrees\\agent-a805526f76d76281d\\docs\\chapter12\\第十二章 智能体性能评估.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\.smart-env\\multi\\docs_chapter5_第五章_基于低代码平台的智能体搭建_md.ajson\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\docs\\chapter10\\第十章 智能体通信协议.md\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\docs\\chapter14\\第十四章 自动化深度研究智能体.md\n.claude\\worktrees\\agent-a805526f76d76281d\\docs\\chapter14\\第十四章 自动化深度研究智能体.md\n.claude\\worktrees\\agent-a811369176b786d45\\docs\\chapter1\\第一章 初识智能体.md\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\docs\\chapter12\\第十二章 智能体性能评估.md\n.claude\\worktrees\\agent-a811369176b786d45\\docs\\chapter10\\第十章 智能体通信协议.md\n.claude\\worktrees\\agent-a0469b5bdd47e653c\\docs\\chapter2\\第二章 智能体发展史.md\n.claude\\worktrees\\agent-a805526f76d76281d\\docs\\chapter2\\第二章 智能体发展史.md\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\docs\\chapter14\\第十四章 自动化深度研究智能体.md\n(Results are truncated. Consider using a more specific path or pattern.)"
+          },
+          {
+            "id": "toolu_ca2fc4e1a2894b7dae73bf2d",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/*记忆系统*"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "04-Permanent\\核心技术\\记忆与检索\\记忆系统.md"
+          },
+          {
+            "id": "toolu_91731b9f636e4a3fb806b98b",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/*驭程工程*"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "No files found"
+          },
+          {
+            "id": "toolu_f325792dc5774e568e808954",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/*驾驭工程*"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "04-Permanent\\工程实践\\驾驭工程.md"
+          },
+          {
+            "id": "toolu_22ad1ba61d8b41858ba73164",
+            "name": "Glob",
+            "input": {
+              "path": "D:\\ai-graph-rag\\AI Agent知识图谱",
+              "pattern": "**/智能体（Agent）.md"
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": ".claude\\worktrees\\agent-a0469b5bdd47e653c\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a805526f76d76281d\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-aebea3fcde1ab2a16\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a811369176b786d45\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-af0c964dfcc4bf1b5\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a603b793afa7fd5c8\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a62ee930e26580370\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a7cfe4c84b2dfd1f5\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a0ea7401be45e08e1\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a4dcd7c1133098d89\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a8fb1bfb6fd6cae29\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a950573ae11704593\\04-Permanent\\智能体（Agent）.md\n.claude\\worktrees\\agent-a98a675df7f5a38b5\\04-Permanent\\智能体（Agent）.md\n04-Permanent\\智能体基础\\智能体（Agent）.md"
+          },
+          {
+            "id": "toolu_399c79fd15a64e5d88642650",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\应用场景\\OpenClaw架构深度解析.md",
+              "limit": 20
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: OpenClaw 架构深度解析\n3\ttags:\n4\t  - 原理\n5\t  - Agent框架\n6\t  - 开源\n7\t  - 微内核\n8\t  - 记忆系统\n9\t  - 多智能体\n10\t  - 上下文工程\n11\tsources:\n12\t  - \"[[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘]]\"\n13\t  - \"[[OpenClaw框架]]\"\n14\t---\n15\t\n16\t# OpenClaw 架构深度解析\n17\t\n18\t> [!tip] 与现有笔记的关系\n19\t> [[OpenClaw框架]] 侧重实用部署和使用指南。本文聚焦**源码级架构深度**——Gateway 5角色、Channel 25+适配器、Auth Profile、Dreaming 三阶段算法等。两篇互补而非替代。\n20\t"
+          },
+          {
+            "id": "toolu_8f51a98771d84fef82014ab3",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\综合\\OpenClaw vs Hermes 架构对比.md",
+              "limit": 20
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: OpenClaw vs Hermes 架构对比\n3\ttags:\n4\t  - 方法\n5\t  - 架构对比\n6\t  - 微内核\n7\t  - 单体\n8\t  - 记忆系统\n9\t  - 上下文工程\n10\t  - 驾驭工程\n11\tsources:\n12\t  - \"[[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘]]\"\n13\t  - \"[[OpenClaw架构深度解析]]\"\n14\t  - \"[[Hermes Agent 框架]]\"\n15\t---\n16\t\n17\t# OpenClaw vs Hermes 架构对比\n18\t\n19\t> [!quote] 核心判断\n20\t> **OpenClaw 是给平台架构师的范本，Hermes 是给个人开发者的瑞士军刀**——两者的差异不是\"谁更好\"，是**目标受众不同**。"
+          },
+          {
+            "id": "toolu_dc0053c3bf7f41728cdc0b11",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\智能体基础\\智能体（Agent）.md",
+              "limit": 20
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttags:\n3\t  - 概念\n4\t  - 智能体\n5\taliases:\n6\t  - Agent\n7\t  - AI Agent\n8\t  - 人工智能代理\n9\t---\n10\t# 智能体（Agent）\n11\t\n12\t> 使用 AI 来实现目标并代表用户完成任务的软件系统，具备推理、规划和记忆能力，具有一定的自主性。\n13\t\n14\t## 核心要点\n15\t\n16\t- **与传统AI的区别**：传统模型是\"问答机\"，你问一句它答一句；Agent是\"助理\"，你给它目标，它自主完成，需要查资料就查，需要调API就调\n17\t- **三大核心特征**：自主性（自己决定下一步做什么）、反应性（能根据环境变化调整）、主动性（多步行动达成目标）\n18\t- **四大核心组件**形成一个闭环：感知模块→规划模块→记忆模块→工具调用模块→回到感知\n19\t\n20\t> [!tip] 面试要点"
+          },
+          {
+            "id": "toolu_aec6df8a486646b5bd5ed0e3",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\核心技术\\记忆与检索\\记忆系统.md",
+              "limit": 20
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: 记忆系统\n3\tdescription: 智能体的记忆模块，分为短时记忆和长时记忆，是Agent区别于纯语言模型的关键能力\n4\ttags: [概念, 记忆与检索, 概念卡片, 永久笔记, 原理, 智能体, 记忆系统, 核心]\n5\taliases:\n6\t  - Memory System\n7\t  - Agent记忆\n8\t  - 短时记忆\n9\t  - 长时记忆\n10\tdate: 2025-05-19\n11\t---\n12\t\n13\t# 记忆系统\n14\t\n15\t> Agent的记忆模块分为短时记忆和长时记忆，是Agent区别于纯语言模型的关键能力之一。短时记忆是\"工作台\"，长时记忆是\"仓库\"——推理时从长时记忆中检索相关信息到短时记忆。\n16\t\n17\t## 核心要点\n18\t\n19\t- **短期记忆**：存当前对话上下文，通常用滑动窗口维护，超出窗口的旧消息被丢弃\n20\t- **长期记忆**：存跨会话的知识，通常存入向量数据库，查询时用当前问题做向量检索找回最相关的记忆片段"
+          },
+          {
+            "id": "toolu_b1146f455c1a4ee2bc9fae6b",
+            "name": "Read",
+            "input": {
+              "file_path": "D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\工程实践\\驾驭工程.md",
+              "limit": 20
+            },
+            "status": "completed",
+            "isExpanded": false,
+            "result": "1\t---\n2\ttitle: 驾驭工程\n3\tdescription: AI Agent 的控制层设计 — 将原始 LLM 转化为可控、安全、高效智能体的工程实践，三次进化的第三跃\n4\ttags: [概念卡片, 永久笔记, 概念, 智能体, 驾驭工程, Harness, 安全, 对齐, Agent, 多智能体, clippings]\n5\taliases:\n6\t  - 驾驭工程（Harness Engineering）\n7\t  - Harness Engineering（三次进化）\n8\tdate: 2026-05-22\n9\tsources:\n10\t  - 驾驭工程（Harness Engineering）\n11\t  - Harness Engineering（三次进化）\n12\t---\n13\t\n14\t# 驾驭工程\n15\t\n16\t> 驾驭工程（Harness Engineering）是为 AI 智能体设计和实施**控制层/驾驭层**的工程实践——将原始 LLM 转化为可控、安全、高效的智能体。它是 AI 工程化的第三次进化，也是将大语言模型从\"对话工具\"转化为\"可控生产系统\"的关键一跃。\n17\t\n18\t> [!quote] 核心论题\n19\t> ==通过工程化手段构建确定性，以承载模型不确定性==——这是 Agent 技术从\"魔法调优\"走向\"系统工程\"的核心思想，也将是未来很长一段时间内构建高质量 Agent 的基石。虽然各个模块的具体实现方式仍在快速演进，但这条核心思想始终未变：即在保证安全、可控的前提下，最大化释放模型的推理与执行潜力。\n20\t>"
+          }
+        ],
+        "isExpanded": true,
+        "result": "这5个笔记文件都已确认存在，以下是它们的情况：\n\n---\n\n### 1. OpenClaw架构深度解析\n- **路径**: `D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\应用场景\\OpenClaw架构深度解析.md`\n- **方向**: 聚焦源码级架构深度，涵盖 Gateway 5角色、Channel 25+适配器、Auth Profile、Dreaming 三阶段算法等\n\n---\n\n### 2. OpenClaw vs Hermes 架构对比\n- **路径**: `D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\综合\\OpenClaw vs Hermes 架构对比.md`\n- **方向**: 核心观点是\"OpenClaw 是给平台架构师的范本，Hermes 是给个人开发者的瑞士军刀\"，对比两种架构的差异\n\n---\n\n### 3. 智能体（Agent）\n- **路径**: `D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\智能体基础\\智能体（Agent）.md`\n- **方向**: 定义智能体的概念，说明与传统AI的区别（Agent是\"助理\"vs传统模型是\"问答机\"），阐述三大核心特征和四大核心组件\n\n---\n\n### 4. 记忆系统\n- **路径**: `D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\核心技术\\记忆与检索\\记忆系统.md`\n- **方向**: 区分短时记忆（工作台，当前对话上下文）和长时记忆（仓库，跨会话知识，用向量数据库存储）\n\n---\n\n### 5. 驾驭工程\n- **路径**: `D:\\ai-graph-rag\\AI Agent知识图谱\\04-Permanent\\工程实践\\驾驭工程.md`\n- **方向**: 介绍 Harness Engineering 的概念——将原始 LLM 转化为可控、安全、高效智能体的工程实践，核心思想是\"通过工程化手段构建确定性，以承载模型不确定性\"\n\n---\n\n所有5个文件都存在，且内容方向符合你的需求。"
+      }
+    }
+  },
+  "currentNote": "04-Permanent/工具与框架/Hermes Agent.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 44474,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 32113,
+    "contextWindow": 200000,
+    "contextTokens": 76587,
+    "percentage": 38
+  }
+}

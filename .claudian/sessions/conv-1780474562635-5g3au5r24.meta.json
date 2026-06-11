@@ -1,0 +1,24 @@
+{
+  "id": "conv-1780474562635-5g3au5r24",
+  "providerId": "claude",
+  "title": "这个里面内容有点重复，帮我删掉一些重复的内容，和“OpenClaw架构深度解析”整合成一个笔记",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1780474562636,
+  "updatedAt": 1780486508071,
+  "lastResponseAt": 1780483041259,
+  "sessionId": "1011af6a-f318-445b-aa09-0cd4bb6b272d",
+  "providerState": {
+    "providerSessionId": "1011af6a-f318-445b-aa09-0cd4bb6b272d"
+  },
+  "currentNote": "04-Permanent/应用场景/OpenClaw架构深度解析.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 48455,
+    "cacheCreationInputTokens": 169,
+    "cacheReadInputTokens": 84355,
+    "contextWindow": 200000,
+    "contextTokens": 132979,
+    "percentage": 66,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "conv-1780285328136-46ro6jv4e",
+  "providerId": "claude",
+  "title": "术语堆叠、缺乏解释的内容重新调整一下",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1780285328136,
+  "updatedAt": 1780473208352,
+  "lastResponseAt": 1780304079984,
+  "sessionId": "2d138e11-6732-4430-8340-42536aea95c4",
+  "providerState": {
+    "providerSessionId": "2d138e11-6732-4430-8340-42536aea95c4"
+  },
+  "currentNote": "04-Permanent/应用场景/OpenClaw架构深度解析.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 46680,
+    "cacheCreationInputTokens": 234,
+    "cacheReadInputTokens": 71800,
+    "contextWindow": 200000,
+    "contextTokens": 118714,
+    "percentage": 59,
+    "contextWindowIsAuthoritative": true
+  }
+}

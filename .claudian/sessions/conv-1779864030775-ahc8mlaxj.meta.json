@@ -1,0 +1,23 @@
+{
+  "id": "conv-1779864030775-ahc8mlaxj",
+  "providerId": "claude",
+  "title": "整理这篇文章中关于obsidian的用法，并提取核心内容到CLaude",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1779864030775,
+  "updatedAt": 1779972852473,
+  "lastResponseAt": 1779864262360,
+  "sessionId": "326de9be-a1e3-4a0f-bc82-b67461908d1a",
+  "providerState": {
+    "providerSessionId": "326de9be-a1e3-4a0f-bc82-b67461908d1a"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 42942,
+    "cacheCreationInputTokens": 114,
+    "cacheReadInputTokens": 21361,
+    "contextWindow": 200000,
+    "contextTokens": 64417,
+    "percentage": 32,
+    "contextWindowIsAuthoritative": true
+  }
+}

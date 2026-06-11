@@ -4,50 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "3737b793f900ae0f",
+        "id": "3c37be42be0ba033",
         "type": "tabs",
         "children": [
           {
-            "id": "73d7c31304963086",
+            "id": "8d221187927a6e46",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Projects/智能旅行助手项目.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
-              "icon": "lucide-file",
-              "title": "智能旅行助手项目"
-            }
-          },
-          {
-            "id": "88793520c46a5ac8",
-            "type": "leaf",
-            "state": {
-              "type": "smart-release-notes-view",
-              "state": {},
-              "icon": "lucide-ghost",
-              "title": "smart-release-notes-view"
-            }
-          },
-          {
-            "id": "f8fa77eef8135976",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Templates/每日笔记模板.md",
+                "file": "03-Resources/智能体基础/万字详解面试题库｜Agent篇.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "每日笔记模板"
+              "title": "万字详解面试题库｜Agent篇"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -80,7 +54,7 @@
               "type": "search",
               "state": {
                 "query": "",
-                "matchingCase": false,
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -104,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 467.5
   },
   "right": {
     "id": "a3d99064ca510f5e",
@@ -163,13 +137,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "04-Permanent/PEAS 模型.md",
+                "file": "Clippings/从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货）.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "PEAS 模型 的大纲"
+              "title": "从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货） 的大纲"
             }
           },
           {
@@ -178,7 +152,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04-Permanent/PEAS 模型.md",
+                "file": "Clippings/从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -188,7 +162,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "PEAS 模型 的反向链接列表"
+              "title": "从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货） 的反向链接列表"
             }
           },
           {
@@ -200,13 +174,33 @@
               "icon": "calendar-with-checkmark",
               "title": "Calendar"
             }
+          },
+          {
+            "id": "38feae2021ffe1ef",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
+          },
+          {
+            "id": "1c371cea2c98ff34",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 525.5
+    "width": 439.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -220,57 +214,60 @@
       "obsidian42-brat:BRAT": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
       "templater-obsidian:Templater": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "realclaudian:Open Claudian": false,
+      "notehelper:tongbuzhushou": false
     }
   },
-  "active": "f8fa77eef8135976",
+  "active": "8d221187927a6e46",
   "lastOpenFiles": [
-    "Templates/概念卡片模板.md",
-    "01-Projects/智能旅行助手项目.md",
-    "未命名.base",
-    "02-Areas/第一章学习笔记 - 初识智能体.md",
-    "MOCs/Everything Claude Code 完全教程.md",
-    "MOCs/智能体核心概念图谱.md",
-    "反应式智能体.md",
-    "README.md",
-    "MOCs/AI Agent 知识总览.md",
-    "docs/chapter4/第四章 智能体经典范式构建.md",
-    "docs/_sidebar.md",
-    "智能体循环.md",
-    "04-Permanent/PEAS 模型.md",
-    "04-Permanent/智能体（Agent）.md",
-    "WebArena.md",
-    "ECC-TUTORIAL.md",
-    "Everything Claude Code 完全教程.md",
-    "00-Inbox/快速上手指南.md",
-    "MOCs/标签体系.md",
-    "docs/Preface.md",
-    "docs/_sidebar_en.md",
+    "04-Permanent/综合/杨植麟访谈合集.md",
+    "笔记同步助手/2026-06-11/从0开发大模型的17种Agent架构演进详细拆解.md",
+    "笔记同步助手/2026-06-11/Hermes Agent 满配实战（3万字）：从 Memory、Skill 到多 Agent 协同（上手指南）.md",
+    "笔记同步助手/images/0e5df5f06bea38a9792deae94ff59527_MD5.png",
+    "04-Permanent/工程实践/Harness Engineering 工程.md",
+    "04-Permanent/核心技术/上下文工程/上下文预算与资源分配.md",
+    "04-Permanent/工具与框架/Hermes Agent.md",
+    "04-Permanent/从0到1搭建Agent-深层思想脉络与设计哲学.md",
+    "04-Permanent/工具与框架/Milvus.md",
+    "MOCs/AI Agent 知识图谱.md",
+    "04-Permanent/核心技术/多智能体/多智能体协作.md",
+    "04-Permanent/工具与框架/Hermes Agent.md.tmp.29876.fa867fabaacd",
+    "笔记同步助手/2026-06-10/这大概是我读过关于AI大模型最全面、好读又易懂的文章了.md",
+    "笔记同步助手/images/0a36baa913e1eef54698a6af7f3ba374_MD5.png",
+    "04-Permanent/工程实践/Claude Code 源码设计亮点深度分析.md",
+    "04-Permanent/工程实践/Claude Code 源码架构.md",
+    "MOCs/Claude Code 知识地图.md.tmp.23528.c6cbf67af5c7",
+    "04-Permanent/工程实践/Claude Code 源码设计亮点深度分析.md.tmp.23528.71dcd3797338",
+    "04-Permanent/工程实践/Claude Code 源码架构补充 — 知识图谱与模块细节.md",
+    "笔记同步助手/images/8e1286052211660dda24c41820d660f7_MD5.png",
+    "笔记同步助手/images/ef1fc525b77ef3a21a85da5f1e5a9b18_MD5.png",
+    "笔记同步助手/images/b10e10951506235a63b7eaa26477e16b_MD5.png",
+    "笔记同步助手/images/dc393ad7ead343e251722be8cbec66a1_MD5.png",
+    "笔记同步助手/images/7107f92c1c370b99ed1c29e8257fe737_MD5.png",
+    "笔记同步助手/images/cbd171fe4c444260bc10ba349dc9b90a_MD5.png",
+    "笔记同步助手/images/8c75151bbf207296c2e250b279fd7b11_MD5.png",
+    "笔记同步助手/images/812944959c9b332c323dfa143c8af358_MD5.png",
+    "03-Resources/智能体基础/万字详解面试题库｜Agent篇.md",
+    "03-Resources/智能体基础/从0开发大模型的17种Agent架构演进详细拆解.md",
+    "04-Permanent/工具与框架/CrewAI.md",
+    "03-Resources/综合/万字详解大模型应用发展：RAG、MCP、Agent的爆发之旅.md",
+    "04-Permanent/工程实践/长程Coding自动化实践经验.md",
+    "04-Permanent/大语言模型/DeepResearch.md",
+    "03-Resources/Claude-Code-Best-Practice/01-核心概念与子代理.md",
+    "03-Resources/Awesome Agentic AI/CLI Agent 指南.md",
+    "03-Resources/Awesome Agentic AI/AI Agent 术语表.md",
+    "Stage 7.md",
+    "03-Resources/Awesome Agentic AI/Agent 课程精选.md",
+    "03-Resources/Awesome Agentic AI/Agent 范式全景图.md",
+    "MOCs/Awesome Agentic AI 知识地图.md.tmp.756.06b2af4fe1ca",
+    "04-Permanent/工程实践/Schema 设计速查表.md.tmp.756.423913b14668",
+    "MOCs/AI Agent 知识图谱.md.tmp.23844.323c6e40dedb",
+    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.bca9f30f47ae",
+    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.dd3860dd264d",
+    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.ad408230f0a5",
+    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.7f63f91a5881",
     "未命名.canvas",
-    "docs/chapter1/Chapter1-Introduction-to-Agents.md",
-    "docs/chapter4/Chapter4-Building-Classic-Agent-Paradigms.md",
-    "en/chapter4/Chapter4-Building-Classic-Agent-Paradigms.md",
-    "en/chapter4",
-    "en",
-    "docs/chapter11/Chapter11-Agentic-RL.md",
-    "Dify.md",
-    "上下文注入.md",
-    "00-Inbox/快速上手指南.md.tmp.30464.e7a77415c46c",
-    "MOCs/智能体核心概念图谱.md.tmp.30464.643d734e0d82",
-    "04-Permanent/PEAS 模型.md.tmp.30464.e65b2b828abb",
-    "04-Permanent/ReAct 范式.md.tmp.30464.14893d5537a3",
-    "README.md.tmp.30464.3a77411954ad",
-    "01-Projects/智能旅行助手项目.md.tmp.30464.8ce68c64fdf0",
-    "02-Areas/第一章学习笔记 - 初识智能体.md.tmp.30464.112e8413290f",
-    "docs/images/9-figures/9-3.png",
-    "docs/images/9-figures/9-2.webp",
-    "docs/images/9-figures/9-1.webp",
-    "docs/images/8-figures/8-9.png",
-    "docs/images/8-figures/8-8.png",
-    "docs/images/8-figures/8-7.png",
-    "docs/images/8-figures/8-6.png",
-    "docs/images/8-figures/8-5.png",
-    "docs/images/8-figures/8-4.png",
-    "docs/images/8-figures/8-3.png"
+    "未命名 1.canvas"
   ]
 }

@@ -3,5 +3,7 @@
   "templater-obsidian",
   "calendar",
   "obsidian-linter",
-  "obsidian-git"
+  "obsidian-git",
+  "realclaudian",
+  "notehelper"
 ]

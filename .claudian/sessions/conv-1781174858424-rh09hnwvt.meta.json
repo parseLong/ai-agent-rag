@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781174858424-rh09hnwvt",
+  "providerId": "claude",
+  "title": "这个图片里面有什么",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781174858424,
+  "updatedAt": 1781176510184,
+  "lastResponseAt": 1781174912614,
+  "sessionId": "1db55052-37cb-456a-8c67-68ad2584d42e",
+  "providerState": {
+    "providerSessionId": "1db55052-37cb-456a-8c67-68ad2584d42e"
+  },
+  "currentNote": "笔记同步助手/images/0e5df5f06bea38a9792deae94ff59527_MD5.png",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 44999,
+    "cacheCreationInputTokens": 156,
+    "cacheReadInputTokens": 23242,
+    "contextWindow": 200000,
+    "contextTokens": 68397,
+    "percentage": 34,
+    "contextWindowIsAuthoritative": true
+  }
+}

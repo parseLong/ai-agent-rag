@@ -1,0 +1,23 @@
+{
+  "id": "conv-1779795135880-7jbc9ovnl",
+  "providerId": "claude",
+  "title": "帮我整理一下这个文章，把核心内容整理到对应的笔记中",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1779795135883,
+  "updatedAt": 1780302782158,
+  "lastResponseAt": 1779842924197,
+  "sessionId": "59a146cb-9167-4a1f-8a1b-b857c269b623",
+  "providerState": {
+    "providerSessionId": "59a146cb-9167-4a1f-8a1b-b857c269b623"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 44263,
+    "cacheCreationInputTokens": 25,
+    "cacheReadInputTokens": 153999,
+    "contextWindow": 200000,
+    "contextTokens": 198287,
+    "percentage": 99,
+    "contextWindowIsAuthoritative": true
+  }
+}

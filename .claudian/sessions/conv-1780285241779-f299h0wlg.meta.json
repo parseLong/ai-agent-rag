@@ -1,0 +1,23 @@
+{
+  "id": "conv-1780285241779-f299h0wlg",
+  "providerId": "claude",
+  "title": "把这个笔记里面的**角色 4：认证 + 信任边界**",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1780285241779,
+  "updatedAt": 1780285318085,
+  "lastResponseAt": 1780285315895,
+  "sessionId": "f687ed18-4a83-4821-a0dd-27b9944c8b96",
+  "providerState": {
+    "providerSessionId": "f687ed18-4a83-4821-a0dd-27b9944c8b96"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 44556,
+    "cacheCreationInputTokens": 198,
+    "cacheReadInputTokens": 28902,
+    "contextWindow": 200000,
+    "contextTokens": 73656,
+    "percentage": 37,
+    "contextWindowIsAuthoritative": true
+  }
+}
