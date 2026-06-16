@@ -18,7 +18,7 @@ date: 2026-06-10
 source: "[[Harness Engineering：长程自动化 AI Coding  Skills 开发实践]]"
 related:
   - "[[Harness Engineering]]"
-  - "[[成为 Harness Engineering 时代的工程师]]"
+  - "[[Harness Engineering 核心概念]]"
   - "[[Harness Engineering深度解析]]"
   - "[[智能体评估]]"
 ---

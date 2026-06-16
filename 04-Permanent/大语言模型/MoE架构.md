@@ -9,7 +9,7 @@ aliases:
   - 专家混合模型
   - 稀疏激活
 date: 2026-06-16
-source: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
+source:
 ---
 
 # MoE架构

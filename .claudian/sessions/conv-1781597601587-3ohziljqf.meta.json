@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781597601587-3ohziljqf",
+  "providerId": "claude",
+  "title": "将Harness 相关的内容整合到一个笔记中，不要分散开",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781597601588,
+  "updatedAt": 1781605832814,
+  "lastResponseAt": 1781600394887,
+  "sessionId": "0e54eca9-123d-4cad-805f-f4440aaf04c2",
+  "providerState": {
+    "providerSessionId": "0e54eca9-123d-4cad-805f-f4440aaf04c2"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 55762,
+    "cacheCreationInputTokens": 140,
+    "cacheReadInputTokens": 133356,
+    "contextWindow": 200000,
+    "contextTokens": 189258,
+    "percentage": 95,
+    "contextWindowIsAuthoritative": true
+  }
+}

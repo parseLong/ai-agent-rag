@@ -7,7 +7,7 @@ aliases:
   - Muon
   - 梯度正交化优化器
 date: 2026-06-16
-source: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
+source:
 ---
 
 # Muon优化器

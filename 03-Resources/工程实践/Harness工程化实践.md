@@ -1,5 +1,5 @@
 ---
-title: AI不缺智商缺纪律：我的Harness工程化实践
+title: Harness工程化实践
 author: 杜学友
 source: 阿里云开发者（微信公众号）
 url: https://mp.weixin.qq.com/s/2kWi0Fld09fNMVIUg9ddKQ
@@ -13,7 +13,7 @@ tags:
 status: 已整理
 ---
 
-# AI不缺智商缺纪律：我的Harness工程化实践
+# Harness工程化实践
 
 > 核心观点：AI Coding 的瓶颈正从"模型能力"转移到"流程工程"——模型已经足够聪明，但不稳定，而稳定性必须由外部框架供给。
 
@@ -22,8 +22,6 @@ status: 已整理
 ---
 
 ## 核心摘要
-
-杜学友两个月 Harness 演进复盘，提供了一套可抄的实践方案：
 
 1. **五层架构**：常驻入口层 → 原子规则层 → 角色 Agent 层 → 按需上下文层 → 执行支撑层 + 稳定性支点 → 详见 [[Harness 五层架构实践]]
 2. **遗忘根因**：压缩丢失、检索失败、指令遵循失败 → harness 三层设计逐一堵漏 → 详见 [[Agent 遗忘三重根因]]

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MOCs/AI Agent 知识图谱.md",
+                "file": "04-Permanent/大语言模型/Token.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI Agent 知识图谱"
+              "title": "Token"
             }
           },
           {
@@ -41,44 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04-Permanent/核心技术/上下文工程/上下文工程三层Stack.md",
+                "file": "笔记同步助手/2026-06-16/AI Agent & Skill 测评方案及落地实践.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "上下文工程三层Stack"
-            }
-          },
-          {
-            "id": "2dfaa5482f841368",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04-Permanent/工具与框架/context-mode.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "context-mode"
-            }
-          },
-          {
-            "id": "d9d7dfeb22b9f40e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "04-Permanent/大语言模型/LLM 训练流程.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "LLM 训练流程"
+              "title": "AI Agent & Skill 测评方案及落地实践"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -209,7 +181,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "04-Permanent/大语言模型/LLM 训练流程.md",
+                "file": "笔记同步助手/2026-06-16/AI Agent & Skill 测评方案及落地实践.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -219,7 +191,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "LLM 训练流程 的反向链接列表"
+              "title": "AI Agent & Skill 测评方案及落地实践 的反向链接列表"
             }
           },
           {
@@ -278,52 +250,51 @@
   },
   "active": "38feae2021ffe1ef",
   "lastOpenFiles": [
-    "04-Permanent/大语言模型/LLM 基础.md",
-    "04-Permanent/大语言模型/LLM 训练流程.md",
-    "RLHF.md",
-    "04-Permanent/大语言模型/mHC（多流约束残差连接）.md",
-    "04-Permanent/核心技术/记忆与检索/RAG.md",
-    "04-Permanent/综合/杨植麟访谈合集.md",
-    "04-Permanent/核心技术/Channel Plugin 25+ Adapter 契约.md",
+    "04-Permanent/工程实践/Harness Engineering.md",
+    "04-Permanent/工程实践/Harness Engineering 核心概念.md",
+    "笔记同步助手/images/fcf95d174f373c4a152f85f056ce2ac3_MD5.png",
+    "笔记同步助手/images/422a06c0ecacc6a202998b718d747d3e_MD5.png",
+    "笔记同步助手/images/0baa39f079515fee03c3a647bc5642e4_MD5.png",
+    "笔记同步助手/images/9016e2fd22cc254face2f5ff89dd2bdc_MD5.jpg",
+    "笔记同步助手/images/5e0d0ed7af73a182f40b6a92949ea947_MD5.png",
+    "笔记同步助手/images/bb170db548d69c082de8be2692f0f158_MD5.jpg",
+    "笔记同步助手/images/4ef80337e8dfa25c3bbd02b390515217_MD5.png",
+    "笔记同步助手/images/e63fbd86064534672958759a490fa014_MD5.png",
+    "笔记同步助手/images/748744e05f89d6ea09733d2310dcafa5_MD5.png",
+    "笔记同步助手/images/56b94fa8334e7c17d6c2760a66b000f1_MD5.png",
+    "笔记同步助手/2026-06-16/AI Agent & Skill 测评方案及落地实践.md",
+    "Harness Engineering 核心概念.md",
+    "04-Permanent/工程实践/Harness Engineering 工程.md",
+    "04-Permanent/核心技术/上下文工程/上下文工程三层Stack.md",
+    "04-Permanent/工程实践/Harness 四阶段演进实践.md",
+    "04-Permanent/工程实践/Claude Code资料.md",
+    "04-Permanent/工程实践/Harness 五层架构实践.md",
+    "04-Permanent/工程实践/工程设计与安全.md",
+    "Harness Engineering 工程.md",
+    "04-Permanent/综合/Harness Engineering深度解析.md",
+    "04-Permanent/大语言模型/DeepSeek V4.md",
+    "03-Resources/工程实践/Harness工程化实践.md",
+    "04-Permanent/大语言模型/DeepSeek V4 Infra 层优化.md",
+    "04-Permanent/大语言模型/DeepSeek V4 训练与推理框架优化.md",
+    "04-Permanent/工程实践/Dispatcher 状态机与文件交接.md",
+    "04-Permanent/工程实践/G1-G8 门禁墙参考卡.md",
+    "04-Permanent/综合/Harness Engineering深度解析.md.tmp.27552.2a8523611b01",
+    "04-Permanent/工程实践/Harness 四阶段演进实践.md.tmp.27552.81546ebf1cac",
+    "04-Permanent/工程实践/Harness 五层架构实践.md.tmp.27552.9aa746df4d7c",
+    "04-Permanent/工程实践/Harness Engineering 工程.md.tmp.27552.867126edfcb4",
+    "04-Permanent/工程实践/Harness Engineering.md.tmp.27552.aa3129e4bbe8",
+    "04-Permanent/工具与框架/context-mode.md",
+    "04-Permanent/综合/工程三次进化-关系衰变与新范式.md",
+    "04-Permanent/Vibe Coding/SDD.md",
+    "04-Permanent/工程实践/5条驭驭工程原则.md",
+    "04-Permanent/大语言模型/Token.md",
+    "04-Permanent/大语言模型/上下文窗口.md",
+    "04-Permanent/大语言模型/提示工程.md",
     "04-Permanent/大语言模型/注意力机制.md.tmp.17076.0afd1eef4ddc",
-    "04-Permanent/核心技术/CLI Backend双路径执行.md",
-    "04-Permanent/工程实践/TencentDB Agent Memory.md",
-    "04-Permanent/大语言模型/注意力残差机制.md",
-    "笔记同步助手/2026-06-16/AI 不缺智商缺纪律：我的 Harness 工程化实践.md",
     "04-Permanent/工程实践/Harness Engineering.md.tmp.26232.b3ff984851da",
     "MOCs/AI Agent 知识图谱.md.tmp.26232.5efc9877099d",
     "MOCs/AI Agent 知识图谱.md.tmp.26232.b770a1983ffe",
     "04-Permanent/大语言模型/Muon优化器.md.tmp.17076.188395f973c2",
-    "04-Permanent/工程实践/state.json 契约.md",
-    "04-Permanent/工程实践/state.json 契约.md.tmp.26232.8b6242126483",
-    "04-Permanent/评估与优化/Effective Feedback Compute 验证反馈质量.md",
-    "04-Permanent/大语言模型/MoE架构.md.tmp.17076.583dbdd9c4dc",
-    "04-Permanent/评估与优化/Honesty Gap 诚实度差距.md",
-    "04-Permanent/评估与优化/Honesty Gap 诚实度差距.md.tmp.26232.5b773dfefefc",
-    "04-Permanent/大语言模型/DeepSeek V4 Infra 层优化.md.tmp.17076.be6e5d4d8b5d",
-    "04-Permanent/工程实践/G1-G8 门禁墙参考卡.md",
-    "04-Permanent/工程实践/G1-G8 门禁墙参考卡.md.tmp.26232.63b3b91f6283",
-    "04-Permanent/工程实践/DeepSeek V4 训练与推理框架优化.md",
-    "04-Permanent/大语言模型/FP4量化感知训练.md",
-    "04-Permanent/工程实践/批无关性与计算确定性.md",
-    "04-Permanent/工程实践/TileLang.md",
-    "04-Permanent/工程实践/Harness 四阶段演进实践.md",
-    "04-Permanent/大语言模型/DeepSeek V4 Infra 层优化.md",
-    "04-Permanent/工程实践/Dispatcher 状态机与文件交接.md",
-    "04-Permanent/评估与优化/七维确定性评分.md",
-    "04-Permanent/工程实践/经验三级进化.md",
-    "04-Permanent/工程实践/Agent 遗忘三重根因.md",
-    "04-Permanent/工程实践/Harness 五层架构实践.md",
-    "07-Attachments/harness-practice/自进化闭环.jpg",
-    "07-Attachments/harness-practice/代码正确性评分.jpg",
-    "07-Attachments/harness-practice/七维评分图.jpg",
-    "07-Attachments/harness-practice/三条路对比图.jpg",
-    "07-Attachments/harness-practice/Agent调度编排.jpg",
-    "07-Attachments/harness-practice/减负分层效果.jpg",
-    "07-Attachments/harness-practice/上下文爆炸示意图.jpg",
-    "07-Attachments/harness-practice/四阶段演进图.jpg",
-    "07-Attachments/harness-practice/19节点链与门禁.jpg",
-    "07-Attachments/harness-practice/harness-五层架构图.jpg",
     "未命名.canvas",
     "未命名 1.canvas"
   ]

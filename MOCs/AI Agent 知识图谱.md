@@ -207,7 +207,7 @@
 - [[经验三级进化]] — lesson→pattern→instinct 三级晋升，踩坑驱动的规则进化机制
 - [[G1-G8 门禁墙参考卡]] — 8个确定性门禁定义（产物存在→编译→单测→覆盖率→ATDD→接口→上线）+ fail-closed + intent×risk裁剪
 - [[state.json 契约]] — Dispatcher状态机的单一真相来源：单写者+ajv校验+文件交接，对应遗忘三重根因的三对策
-- [[成为 Harness Engineering 时代的工程师]] — 四步进阶路线图：Prompt基础 → Context工程 → Agent系统设计 → 动态Harness思维
+- [[Harness Engineering 核心概念]] — 四步进阶路线图：Prompt基础 → Context工程 → Agent系统设计 → 动态Harness思维
 - [[工程设计与安全]] — 构建者信条、代码-文档同步、工具描述工程、输出解析、重试恢复、护栏钩子、流式渲染
 - [[系统提示词工程]] — 静态段+动态段+缓存边界+行为塑形
 - [[MCP 协议实现]] — 外部工具连接的实现层
