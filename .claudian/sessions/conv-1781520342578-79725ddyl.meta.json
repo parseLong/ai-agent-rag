@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781520342578-79725ddyl",
+  "providerId": "claude",
+  "title": "深度整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781520342578,
+  "updatedAt": 1781571761273,
+  "lastResponseAt": 1781571761273,
+  "sessionId": "04ed1323-eafe-4e9a-959c-7de93c24d9e1",
+  "providerState": {
+    "providerSessionId": "04ed1323-eafe-4e9a-959c-7de93c24d9e1"
+  },
+  "currentNote": "笔记同步助手/2026-06-15/一篇搞懂 AI Coding Agent 的 Token 成本控制.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 53337,
+    "cacheCreationInputTokens": 170,
+    "cacheReadInputTokens": 127785,
+    "contextWindow": 200000,
+    "contextTokens": 181292,
+    "percentage": 91,
+    "contextWindowIsAuthoritative": true
+  }
+}

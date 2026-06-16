@@ -104,6 +104,50 @@ console.print(test_result)
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | Reflection 解决"质量"但没解决"知识边界"——LLM 再会反思也被困在参数里 |
+| 它的 State 是什么？ | Tool Use 的 state 本质上是一条"事件日志"，在 agno 里由 `Agent` 内部自动维护的会话上下文 |
+| 它的拓扑是什么？ | 线性链 + 内置 while 循环：model → tool → model → tool → ... → 最终回答 |
+| 它的 Router 怎么工作？ | 内部循环路由：只要 model 回复里还有 `tool_calls`，就回到 model 再跑一次 |
+| 它的失败模式是什么？ | 失败通常不来自 LLM 本身，而来自**边界层**：工具名幻觉、参数类型错误、工具返回格式不对、工具结果被模型错误综合。关键难点不是 prompt，而是**序列化与反序列化** |
+| 什么时候该升级？ | 因为 Tool Use 没有显式规定"一定要循环"，模型可能只调一次工具就收尾，需要真正的观察-行动闭环 → [[03 ReAct]] |
+
+### 它真正新增了什么能力？
+
+不是"会调用函数"，而是：**文本控制流可以跨越到结构化世界，再返回文本世界。** 这个跨越点是整个 agent engineering 的第一道硬边界。
+
+### agno 实现
+
+```python
+from agno.agent import Agent
+from agno.models.openai import OpenAIChat
+from agno.tools.duckduckgo import DuckDuckGoTools
+
+def get_stock_price(symbol: str) -> str:
+    """Return the latest stock price for a given symbol."""
+    return f"The current price of {symbol.upper()} is $172.35."
+
+tool_agent = Agent(
+    model=OpenAIChat(id="gpt-5-mini"),
+    tools=[get_stock_price, DuckDuckGoTools()],
+    instructions="Use tools to answer questions that need real-time data.",
+    show_tool_calls=True,
+)
+
+tool_agent.run("What is Apple's current stock price?")
+```
+
+底层等价于 agno 内部的 while 循环：`while response.tool_calls: → execute tools → append ToolMessage → invoke model again`。这是 agno `Agent` 帮你内置的。
+
+---
+
 ## 结论
 
 在此笔记本中，我们基于**工具使用**架构构建了一个完整的功能代理。我们成功地为 Nebius 支持的 LLM 配备了网络搜索工具，并使用 LangGraph 创建了一个强大的推理循环，允许代理决定何时以及如何使用它。

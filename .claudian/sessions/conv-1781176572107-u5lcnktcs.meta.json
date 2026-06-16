@@ -4,8 +4,8 @@
   "title": "将这篇文章核心内容整理到Hermes Agent笔记中",
   "titleGenerationStatus": "failed",
   "createdAt": 1781176572107,
-  "updatedAt": 1781176856541,
-  "lastResponseAt": 1781176856541,
+  "updatedAt": 1781486594378,
+  "lastResponseAt": 1781486301406,
   "sessionId": "edf26fe4-0621-4eec-8941-423d58e0dec4",
   "providerState": {
     "providerSessionId": "edf26fe4-0621-4eec-8941-423d58e0dec4"
@@ -13,12 +13,12 @@
   "currentNote": "笔记同步助手/2026-06-11/Hermes Agent 满配实战（3万字）：从 Memory、Skill 到多 Agent 协同（上手指南）.md",
   "usage": {
     "model": "glm-5.1",
-    "inputTokens": 45323,
-    "cacheCreationInputTokens": 4664,
-    "cacheReadInputTokens": 87860,
+    "inputTokens": 46088,
+    "cacheCreationInputTokens": 492,
+    "cacheReadInputTokens": 118697,
     "contextWindow": 200000,
-    "contextTokens": 137847,
-    "percentage": 69,
+    "contextTokens": 165277,
+    "percentage": 83,
     "contextWindowIsAuthoritative": true
   }
 }

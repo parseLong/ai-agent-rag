@@ -143,6 +143,57 @@ print("Market simulator environment defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 在机器人、交易、生产系统配置这类任务里，试错有代价 → **把试错从真实世界搬进模拟世界** |
+| 它的 State 是什么？ | 双工具状态：`simulate_action`（forked copy 预演）+ `execute_action`（真实执行），agent 先调用 simulate 再决定是否 execute |
+| 它的拓扑是什么？ | 模拟 → 评估 → 决策（执行 or 不执行），反事实执行闭环 |
+| 它的 Router 怎么工作？ | agent 的 instructions 控制路由：先 simulate，如果模拟结果不优于 hold，就不 execute |
+| 它的失败模式是什么？ | simulation-reality gap——模拟器越不真实，agent 越可能做出"模拟里完美，现实里灾难"的决定。架构上限往往不是 LLM，而是 simulator 的保真度 |
+| 什么时候该升级？ | 当需要副作用审批闸门 → [[14 Dry-Run Harness]] |
+
+### 它真正新增了什么能力？
+
+**反事实执行（counterfactual execution）。** 系统不再直接问"下一步做什么"，而是先问：如果我这么做会发生什么？
+
+### agno 实现
+
+```python
+import copy
+
+REAL = MarketSimulator()
+
+def simulate_action(action: str, amount: float, horizon: int = 5) -> str:
+    """Roll out an action on a forked copy of the market for `horizon` days."""
+    sim = copy.deepcopy(REAL)
+    sim.step(action, amount)
+    for _ in range(horizon - 1):
+        sim.step("hold")
+    return f"Simulated value after {horizon} days: ${sim.portfolio.value(sim.price):.2f}"
+
+def execute_action(action: str, amount: float) -> str:
+    """Commit the action to the REAL market."""
+    REAL.step(action, amount)
+    return f"Executed: {action} {amount}. Portfolio now ${REAL.portfolio.value(REAL.price):.2f}."
+
+trader = Agent(
+    model=OpenAIChat(id="gpt-5-mini"),
+    tools=[simulate_action, execute_action],
+    instructions=["Before committing any action with execute_action, first call simulate_action.",
+                  "If the simulated outcome is worse than holding, do not execute."],
+)
+```
+
+模拟器就是一个普通 Python 对象，agent 通过工具把它当成"可以快照、可以推进、可以回滚"的沙箱。
+
+---
+
 ## 结论
 
 在此笔记本中，我们构建了一个强大的代理架构，该架构使用内部**模拟器**在提交之前测试和完善其操作。通过创建一个循环`Propose -> Simulate -> Refine -> Execute`，我们使我们的代理能够执行复杂的风险分析，并在动态环境中做出更细致、更安全的决策。

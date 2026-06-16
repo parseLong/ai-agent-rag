@@ -119,6 +119,58 @@ print("Basic single-shot tool-using agent compiled successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | Tool Use 的控制流还太浅——工具结果只被消费一次。ReAct 让工具结果**进入下一轮决策** |
+| 它的 State 是什么？ | 消息序列变成**行动轨迹（trace）**：当前问题 → 上一步推理 → 工具调用 → 工具观测 → 新一轮判断 |
+| 它的拓扑是什么？ | 最小闭环：Thought → Action → Observation 滚动循环 |
+| 它的 Router 怎么工作？ | 内置回边：只要 model 回复里还有 `tool_calls`，就回到 model 再跑一次。这是整个 agent architecture 里最重要的回边之一 |
+| 它的失败模式是什么？ | **局部贪心**——每次只基于当前 observation 决策，容易走弯路、重复搜索、陷入局部最优 |
+| 什么时候该升级？ | 当任务需要显式的步骤顺序控制 → [[04 Planning]] |
+
+![[07-Attachments/all-agentic-architectures/ReAct拓扑.png]]
+
+### 它为什么是 80% 任务的起点？
+
+大多数任务并不需要复杂规划，只需要：先看一眼 → 做个动作 → 根据反馈再决定下一步，已足够覆盖多轮搜索、多跳问答、网页研究、工具驱动的数据收集。
+
+### agno 实现
+
+```python
+from agno.agent import Agent
+from agno.models.openai import OpenAIChat
+from agno.tools.duckduckgo import DuckDuckGoTools
+from agno.tools.yfinance import YFinanceTools
+
+react_agent = Agent(
+    model=OpenAIChat(id="gpt-5-mini"),
+    tools=[DuckDuckGoTools(), YFinanceTools(stock_price=True, company_news=True)],
+    instructions=[
+        "You are a research assistant.",
+        "Think step by step. For each step decide whether to use a tool or answer.",
+        "After each tool observation, re-evaluate what you still need before answering.",
+    ],
+    reasoning=True,
+    markdown=True,
+    show_tool_calls=True,
+)
+
+react_agent.print_response(
+    "Based on the latest news, should I be worried about AAPL next quarter?",
+    stream=True,
+)
+```
+
+agno 的 `reasoning=True` 会把 ReAct 的"Thought Action Observation"显式写进 trace。关键不是某一行代码，而是那条 `tool → model` 的循环边——它把"单次调用"变成了"持续交互"。
+
+---
+
 ## 结论
 
 在本笔记本中，我们不仅实现了 **ReAct** 架构，而且还展示了其相对于更基本的单次方法的明显优势。通过构建一个允许代理循环推理和行动的工作流程，我们使其能够解决复杂的、多步骤的问题，否则这些问题将变得棘手。

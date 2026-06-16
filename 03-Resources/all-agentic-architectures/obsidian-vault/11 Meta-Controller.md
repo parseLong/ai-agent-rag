@@ -132,6 +132,52 @@ print("Specialist agents defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 很多系统不需要 Blackboard 的持续调度，问题更像是：这条请求是研究类还是编码类？→ **入口分诊** |
+| 它的 State 是什么？ | 极简：`user_request / selected_agent / result`——请求是什么、被路由给谁、返回了什么 |
+| 它的拓扑是什么？ | 一次性路由：Meta-Controller → 选定专家 → 结果 |
+| 它的 Router 怎么工作？ | controller 只做选择不做任务，一次性路由完毕 |
+| 它的失败模式是什么？ | **路由错误**——只路由一次，第一跳错了整个路径就错了，且常是"方向偏了"而非显式报错 |
+| 什么时候该升级？ | 如果任务需要多轮动态调度 → [[07 Blackboard]] |
+
+![[07-Attachments/all-agentic-architectures/Meta-Controller拓扑.png]]
+
+### 它和 Blackboard 的本质区别
+
+- **Meta-Controller**：一次性路由（分诊台）
+- **Blackboard**：持续调度（总控台）
+
+### 它为什么在生产里特别常见？
+
+因为足够简单也足够有效。生产系统的起步架构通常先选 Meta-Controller，而不是一上来就 Blackboard。
+
+### agno 实现
+
+```python
+from agno.team import Team
+
+meta = Team(
+    name="meta_controller",
+    mode="route",                      # 关键：一次性路由
+    model=OpenAIChat(id="gpt-5-mini"),
+    members=[generalist, researcher, coder],
+    instructions="Choose exactly one member based on the request type. Do not do the work yourself.",
+)
+
+meta.print_response("Write a Python function to compute the LCM of two numbers.")
+```
+
+`mode="route"` 的精髓：controller 自己不做任务，只做选择。
+
+---
+
 ## 结论
 
 In this notebook, we have successfully implemented a **Meta-Controller** architecture.我们的测试清楚地证明了其主要功能：充当智能动态路由器。

@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781571048531-duvh4n2g8",
+  "providerId": "claude",
+  "title": "深度整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781571048531,
+  "updatedAt": 1781572438765,
+  "lastResponseAt": 1781572438765,
+  "sessionId": "28e2877a-e12f-4d8b-a565-096e278c768d",
+  "providerState": {
+    "providerSessionId": "28e2877a-e12f-4d8b-a565-096e278c768d"
+  },
+  "currentNote": "笔记同步助手/2026-06-15/读完这篇，你就搞懂 DeepSeek v4 了.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 51216,
+    "cacheCreationInputTokens": 317,
+    "cacheReadInputTokens": 121221,
+    "contextWindow": 200000,
+    "contextTokens": 172754,
+    "percentage": 86,
+    "contextWindowIsAuthoritative": true
+  }
+}

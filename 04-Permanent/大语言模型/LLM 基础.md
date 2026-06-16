@@ -318,19 +318,13 @@ single: input=14 output=48 → $0.000254
 
 同一个 prompt 同时送给 Claude、[[GPT]]、Gemini，比较三家的响应差异。观察"同一句话为什么产生不同答案"——回答风格、长度、判断取舍都不一样。建议用 OpenAI、Anthropic、Google 三家 SDK 各一段程序调用。
 
-> [!note] 基础 starter 范本 → [examples/stage-1/04-cross-provider/](https://github.com/erhwenkuo/awesome-agentic-ai-zh/tree/main/examples/stage-1/04-cross-provider/)（含三家 SDK 并行调用 + table 对照、缺哪家 key 就 skip 哪家；illustrative，**不是 chapter-length 完整教程**）
-
 ### 练习 5：Error Handling
-
-> [!warning] 这是后面 Stage 3-8 写 production agent 一定会用到的基础
 
 故意触发错误情境并写 retry：
 
 - API key 错误 → 看怎么 raise
 - prompt 超长 → [[上下文窗口]] 满了会发生什么
 - 网络断掉 → 写一个有 exponential backoff 的 retry wrapper
-
-> [!note] 基础 starter 茑本 → [examples/stage-1/05-error-handling/](https://github.com/erhwenkuo/awesome-agentic-ai-zh/tree/main/examples/stage-1/05-error-handling/)（含 mock-based test、不用真的断网就能验证 retry 逻辑；illustrative，**不是 chapter-length 完整教程**）
 
 ### 练习 6：Local LLM
 
@@ -343,41 +337,6 @@ single: input=14 output=48 → $0.000254
 ollama pull qwen2.5:3b
 ollama serve  # 预设 port 11434
 ```
-
-<details>
-<summary>📋 <b>起手码</b>（复制到 <code>practice_6.py</code>）</summary>
-
-```python
-# 需要：pip install openai
-# 前置：Ollama 已 serve、qwen2.5:3b 已 pull
-import sys
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="http://localhost:11434/v1",
-    api_key="ollama",  # Ollama 不检查、随便填
-)
-
-r = client.chat.completions.create(
-    model="qwen2.5:3b",
-    messages=[{"role": "user", "content": "用 3 句话介绍什么是 ReAct。"}],
-)
-
-text = r.choices[0].message.content
-print("回应：", text)
-
-# === 自我验证 ===
-assert len(text) > 10, "回应太短、Ollama 可能没跑起来"
-print(f"✅ 练习 6 通过 — 你的本机 Ollama 已能透过 OpenAI 兼容 API 呼叫")
-print(f"💡 跑这次完全没花钱（除了你的电力）")
-```
-
-**为什么要做**：学会跑本地 LLM 后，后面 Stage 3-6 的实验都不会被 API 费用卡住；隐私敏感场景也能 offline。
-
-</details>
 
 ---
 

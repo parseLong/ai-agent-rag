@@ -7,8 +7,9 @@ aliases:
 创建日期: 2026-05-19
 ---
 
-> 基于 [all-agentic-architectures](https://github.com/your-username/all-agentic-architectures) 项目整理
+> 基于 [all-agentic-architectures](https://github.com/FareedKhan-dev/all-agentic-architectures) 项目整理
 > 涵盖 17 种核心 Agent 架构模式
+> 新增 [[Agent架构演化总览]] —— 控制流设计视角 + agno 实现
 
 ---
 
@@ -64,3 +65,42 @@ aliases:
 ### Part 5: 学习与适应 (Notebooks 15, 16)
 - [[15 RLHF|基于人类反馈的强化学习]] -- 利用编辑反馈迭代改进并保存
 - [[16 Cellular Automata|元胞自动机]] -- 去中心化网格代理产生涌现行为
+
+---
+
+## 新增：控制流视角
+
+> 来自 [[Agent架构演化总览]]：Agent architecture 的本质不是 prompt engineering，而是控制流设计。
+
+每个架构笔记现在都新增了 **"控制流视角（agno 实现）"** 章节，包含：
+
+- **六问拆解**（问题 / State / 拓扑 / Router / 失败模式 / 升级时机）
+- **它真正新增了什么能力**（控制流角度而非"更聪明"角度）
+- **agno 代码示例**（与已有的 LangGraph 代码互补）
+
+### 核心结论
+
+1. **先别迷信"万能 agent"，先把状态和控制流画清楚。**
+2. **大多数系统从 ReAct 起步，但可靠系统一定会引入验证、记忆和边界控制。**
+3. **真正高级的 agent，不是更敢做事，而是更知道什么时候不该做。**
+
+### 架构选择指南
+
+| 你缺的能力 | 优先架构 |
+|---|---|
+| 输出质量不稳 | [[01 Reflection]] |
+| 多步工具推理 | [[03 ReAct]] |
+| 全局步骤控制 | [[04 Planning]] |
+| 工具容错 | [[06 PEV]] |
+| 角色分工 | [[05 Multi-Agent Systems]] |
+| 动态编排 | [[07 Blackboard]] |
+| 请求分诊 | [[11 Meta-Controller]] |
+| 高可靠结论 | [[13 Ensemble]] |
+| 跨轮记忆 | [[08 Episodic + Semantic Memory]] |
+| 关系推理 | [[12 Graph Memory]] |
+| 回溯搜索 | [[09 Tree of Thoughts]] |
+| 行动前模拟 | [[10 Mental Loop]] |
+| 副作用审批 | [[14 Dry-Run Harness]] |
+| 边界感知 | [[17 Reflexive Metacognitive]] |
+| 长期自我改进 | [[15 RLHF]] |
+| 去中心化求解 | [[16 Cellular Automata]] |

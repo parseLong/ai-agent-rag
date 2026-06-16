@@ -10,7 +10,8 @@ tags:
   - 上下文工程
   - 工程实践
 sources:
-  - "[[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘]]"
+  - "[[OpenClaw与Hermes源码架构深度复盘]]"
+  - "[[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘 1]]"
   - "[[玩转OpenClaw，你需要了解的：核心架构、运作原理、Agent部署步骤]]"
   - 罗福莉（小米）访谈
   - Anthropic Blog: Building Effective Agents (2024.12)

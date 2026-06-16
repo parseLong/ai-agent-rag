@@ -131,6 +131,71 @@ print("Generator and Critic components defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | Reflection 只有一次 critique pass。追求高质量输出需要：生成 → 评估 → 修订 → 再评估 → 不达标继续，即**进化回路** |
+| 它的 State 是什么？ | `last_email / last_critique / revision`，以及跨任务的 `GoldStandardMemory`——批准过的结果注入未来生成 |
+| 它的拓扑是什么？ | Loop(gen → critic) + 终止条件（critic 批准或达到最大修订次数） |
+| 它的 Router 怎么工作？ | `Loop.end_condition` 天然支持：critic 批准 → 终止；revision ≥ 3 → 强制终止 |
+| 它的失败模式是什么？ | critic 标准不稳、revision 收益递减、记忆库积累低质量样本会反向污染未来生成 |
+| 什么时候该升级？ | Self-Improve 不是"会自动越来越好"，而是"有机会在严格约束下越来越好" |
+
+### 它和 Reflection 的本质区别
+
+两层能力：**单次任务内迭代优化** + **跨任务积累高质量样例**（GoldStandardMemory 把批准过的结果注入未来生成）。
+
+### agno 实现
+
+```python
+class EmailCritique(BaseModel):
+    is_approved: bool
+    feedback: str
+
+class MarketingEmail(BaseModel):
+    subject: str
+    body: str
+
+# 跨任务：高质量样例库
+class GoldStandardMemory:
+    def __init__(self):
+        self.examples: List[MarketingEmail] = []
+    def few_shot_block(self) -> str:
+        if not self.examples: return "No gold examples yet."
+        return "\n\n---\n\n".join(f"Subject: {e.subject}\nBody:\n{e.body}" for e in self.examples[-3:])
+    def add(self, e: MarketingEmail):
+        self.examples.append(e)
+
+def should_stop(_outputs) -> bool:
+    """Loop 终止：critic 批准，或达到最大修订次数。"""
+    state = self_improve_wf.session_state
+    last = state.get("last_critique")
+    if last is not None and last.is_approved: return True
+    if state.get("revision", 0) >= 3: return True
+    return False
+
+self_improve_wf = Workflow(
+    name="self_improve",
+    session_state={"revision": 0},
+    steps=[
+        Loop(
+            name="refine_loop",
+            steps=[Step(name="gen", executor=gen_step), Step(name="critic", executor=critic_step)],
+            end_condition=should_stop,
+        ),
+    ],
+)
+```
+
+关键设计：`Loop.end_condition` 实现了终止条件，`GoldStandardMemory` 实现了跨任务样例积累——这是它和 Reflection 的本质区别。
+
+---
+
 ## 结论
 
 在本笔记本中，我们实现了全面且复杂的**自我改进循环**。我们已经证明，这种架构不仅仅是改进单个工作，而且是创建能够随着时间的推移真正学习和改进的代理的强大范例。

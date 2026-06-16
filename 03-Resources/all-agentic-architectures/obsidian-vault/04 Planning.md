@@ -132,6 +132,62 @@ print("Reactive (ReAct) agent compiled successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | ReAct 本质是在线贪心策略，对需要顺序约束、步骤依赖和过程可追踪的任务不够用 |
+| 它的 State 是什么？ | 新增了 `Plan` 字段（有序步骤列表），以及 `session_state` 中的中间结果。**控制流本身被对象化了** |
+| 它的拓扑是什么？ | 线性链 + Loop：Plan → Loop(Execute each step) → Synthesize |
+| 它的 Router 怎么工作？ | 路由逻辑从"LLM 在 prompt 里决定下一步"变成了**"一个数据结构是否还有剩余项"**——这才是 Planning 真正的结构变化 |
+| 它的失败模式是什么？ | **过于乐观**——一旦 plan 错了，后面每一步都可能是错的。可预测性增强了，适应性下降了 |
+| 什么时候该升级？ | 当你不再相信工具会稳定成功 → [[06 PEV]] |
+
+![[07-Attachments/all-agentic-architectures/Planning拓扑.png]]
+
+### 它真正新增了什么能力？
+
+不是"更聪明的思考"，而是：**把未来控制流提前 materialize 成一个数据结构。** 你现在可以可视化计划、检查计划、修改计划、追踪执行进度。
+
+### agno 实现
+
+```python
+from agno.workflow.v2 import Workflow, Step, Loop
+
+planner = Agent(name="planner", model=OpenAIChat(id="gpt-5-mini"),
+    response_model=Plan,
+    instructions="Decompose the user request into a list of atomic tool-queryable steps.")
+
+executor = Agent(name="executor", model=OpenAIChat(id="gpt-5-mini"),
+    tools=[DuckDuckGoTools()],
+    instructions="Answer exactly one sub-question using tools.")
+
+def plan_is_empty(_outputs) -> bool:
+    return len(planning_wf.session_state["plan"]) == 0
+
+planning_wf = Workflow(
+    name="planning",
+    session_state={"plan": [], "intermediate": []},
+    steps=[
+        Step(name="plan", executor=plan_step),
+        Loop(
+            name="execute_all",
+            steps=[Step(name="execute_one", executor=execute_step)],
+            end_condition=plan_is_empty,
+        ),
+        Step(name="synthesize", executor=synth_step),
+    ],
+)
+```
+
+`Loop.end_condition` 检查的是数据结构（plan 是否空），而不是 LLM 输出——路由逻辑从非确定性变成确定性。
+
+---
+
 ## 结论
 
 在此笔记本中，我们实现了 **Planning** 架构，并将其直接与 **ReAct** 模式进行对比。通过强制代理在执行之前首先构建全面的计划，我们在明确定义的多步骤任务的透明度、稳健性和效率方面获得了显着的好处。

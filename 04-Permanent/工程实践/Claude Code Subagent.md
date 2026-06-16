@@ -1,13 +1,20 @@
 ---
 title: Claude Code Subagent
 description: Claude Code内建的multi-agent机制——写一个.markdown文件就能创建独立context的子agent，无需framework代码
-tags: [概念卡片, 永久笔记, 概念, 智能体, Claude Code, Subagent, 多智能体]
+tags:
+  - 概念卡片
+  - 永久笔记
+  - 概念
+  - 智能体
+  - Claude Code
+  - Subagent
+  - 多智能体
 aliases:
   - Subagent
   - Claude Subagent
   - 子Agent
 date: 2026-06-11
-source: "[[Stage 5 — Claude Code 生态]]"
+source:
 ---
 
 # Claude Code Subagent
@@ -16,7 +23,7 @@ source: "[[Stage 5 — Claude Code 生态]]"
 
 ## 🧠 核心洞察
 
-Multi-agent 不只有 framework 这条路。Claude Code 提供另一种 abstraction：**subagent — 写 markdown 不写 code，天生[[上下文工程]]隔离**。
+Multi-agent 不只有 framework 这条路。Claude Code 提供另一种 abstraction：**subagent — 写 markdown 不写 code，天生[[Context Engineering]]隔离**。
 
 | 路线 | 启动方式 | Runtime | Context 隔离 |
 |---|---|---|---|

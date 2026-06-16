@@ -37,7 +37,7 @@ tags: [clippings, 智能体, 范式演变, 发展史]
 |---------|-------------|
 | Prompt 深耦合→渐进式加载 | [[Prompt与Context工程（三次进化）]]、[[系统提示词工程]] |
 | CoT 思维链→复杂规划 | [[CoT]]、[[Plan-and-Solve]]、[[Plan-and-Execute]] |
-| Workflow 刚性→动态 | [[驾驭工程]] |
+| Workflow 刚性→动态 | [[Harness Engineering]] |
 | RAG 记忆检索 | [[RAG]]、[[向量存储]] |
 | Skills 技能体系 | [[Skills技能]] |
 | 记忆压缩策略 | [[上下文压缩]]、[[上下文窗口管理]] |
@@ -47,5 +47,5 @@ tags: [clippings, 智能体, 范式演变, 发展史]
 
 - [[Agent技术范式演变（2023-2026）]] — 本文核心内容的整合卡片
 - [[运行时环境（Runtime）]] — 文章中的全新概念
-- [[驾驭工程]] — 文章中的 Workflow 概念在知识库中的对应
+- [[Harness Engineering]] — 文章中的 Workflow 概念在知识库中的对应
 - [[记忆到技能转化]] — 文章中自进化Agent概念在知识库中的对应

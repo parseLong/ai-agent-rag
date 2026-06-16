@@ -416,6 +416,6 @@ function bridgePermissionRequest(request: PermissionRequest): Promise<Permission
 - [[Claude Code 源码架构]] — 已有的完整架构梳理
 - [[Claude Code 架构解析]] — 从单代理到自主团队的演进路径
 - [[Claude Code 知识地图]] — MOC 导航入口
-- [[上下文工程]] — 上下文管理的完整方法论
+- [[Context Engineering]] — 上下文管理的完整方法论
 - [[Prompt Cache]] — 缓存机制的核心设计
 - [[权限系统]] — 安全边界的详细实现

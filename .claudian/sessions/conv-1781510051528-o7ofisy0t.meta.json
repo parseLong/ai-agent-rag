@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781510051528-o7ofisy0t",
+  "providerId": "claude",
+  "title": "整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781510051528,
+  "updatedAt": 1781512968713,
+  "lastResponseAt": 1781510691174,
+  "sessionId": "80096910-5f53-46da-8c22-09f31976f2a3",
+  "providerState": {
+    "providerSessionId": "80096910-5f53-46da-8c22-09f31976f2a3"
+  },
+  "currentNote": "笔记同步助手/2026-06-15/十年老技术开发的 AI Agent 探索之路.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 45937,
+    "cacheCreationInputTokens": 1359,
+    "cacheReadInputTokens": 60487,
+    "contextWindow": 200000,
+    "contextTokens": 107783,
+    "percentage": 54,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -122,6 +122,59 @@ print("Successfully connected to Neo4j and defined the Graph Maker Agent.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 向量检索能回答"哪段历史最像现在的问题"，但不能天然回答"这个实体和那个实体之间隔了几跳关系" → **把知识从 chunk 组织提升到关系结构** |
+| 它的 State 是什么？ | Knowledge Graph（entities + relationships），从非结构化文本抽实体和关系 |
+| 它的拓扑是什么？ | Text → Knowledge Graph → Text-to-Cypher → Query → Answer |
+| 它的 Router 怎么工作？ | graph_maker 抽取 → write_triples 写入 → graph_query_agent 查询 |
+| 它的失败模式是什么？ | 抽取错误导致图污染、schema 设计不佳导致图不可用、Text-to-Cypher 生成错误查询、图查询结果正确但 synthesis 层误读 |
+| 什么时候升级？ | Graph Memory 的关键不只是 LLM，而是整个知识建模链条 |
+
+### 它真正新增了什么能力？
+
+核心变化是：**从"相似性召回"升级到"结构性推理"。** 在企业知识问答、组织关系分析、并购链条追踪这类问题上非常关键。
+
+### agno 实现
+
+```python
+class Node(BaseModel):
+    id: str = Field(description="Unique name or identifier for the entity.")
+    type: str = Field(description="Entity type, e.g., Person, Company.")
+
+class Relationship(BaseModel):
+    source: Node
+    target: Node
+    type: str = Field(description="Relationship verb in ALL_CAPS, e.g., WORKS_FOR, ACQUIRED.")
+
+class KnowledgeGraph(BaseModel):
+    relationships: List[Relationship]
+
+graph_maker = Agent(name="graph_maker", model=OpenAIChat(id="gpt-5-mini"),
+    response_model=KnowledgeGraph,
+    instructions="Extract entities (nodes) and relationships from the given text.")
+
+# agno 的 Neo4j 工具可以直接做图查询
+from agno.tools.neo4j import Neo4jTools
+
+graph_query_agent = Agent(name="graph_query", model=OpenAIChat(id="gpt-5-mini"),
+    tools=[Neo4jTools(url="bolt://localhost:7687", user="neo4j", password="...")],
+    instructions="First generate a Cypher query, run it, then synthesize a natural answer. If the first query returns nothing, rewrite and retry once.")
+
+# 1) 抽取
+kg = graph_maker.run("Tim Cook is the CEO of Apple. Apple acquired Beats in 2014.").content
+# 2) 写入图库，然后查询
+graph_query_agent.print_response("Which companies did Apple acquire and in which year?")
+```
+
+---
+
 ## 结论
 
 在本笔记本中，我们构建了一个围绕**图/世界模型内存**构建的完整代理系统。我们演示了完整的生命周期：摄取非结构化数据，使用法学硕士构建结构化知识图，然后使用该图来回答需要真正推理的复杂、多跳问题。

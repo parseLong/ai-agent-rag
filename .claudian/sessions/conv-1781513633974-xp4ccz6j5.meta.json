@@ -1,0 +1,35 @@
+{
+  "id": "conv-1781513633974-xp4ccz6j5",
+  "providerId": "claude",
+  "title": "深度整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781513633974,
+  "updatedAt": 1781571055042,
+  "lastResponseAt": 1781520332195,
+  "sessionId": "0a91e331-4baf-4c4d-b55d-df0d1550755b",
+  "providerState": {
+    "providerSessionId": "0a91e331-4baf-4c4d-b55d-df0d1550755b",
+    "subagentData": {
+      "toolu_ef6c824686d24939b7300864": {
+        "id": "toolu_ef6c824686d24939b7300864",
+        "description": "Explore vault structure",
+        "prompt": "Explore the vault directory structure at D:\\ai-graph-rag\\AI Agent知识图谱. I need to understand:\n1. What directories exist (especially 04-Permanent/, 03-Resources/, MOCs/, 07-Attachments/)\n2. What notes already exist in these directories\n3. The current content of MOCs/AI Agent 知识图谱.md and MOCs/标签体系.md\n4. Any existing notes related to OpenClaw or Hermes or Agent architecture\n\nJust provide a summary of findings, not file dumps.",
+        "status": "completed",
+        "toolCalls": [],
+        "isExpanded": false,
+        "result": "API Error: 400 event:error\ndata:{\"code\":\"InvalidParameter\",\"message\":\"<400> InternalError.Algo.InvalidParameter: The value of the enable_thinking parameter is restricted to True.\",\"request_id\":\"cceee6aa-2222-924e-8f04-577dead82cbb\"}"
+      }
+    }
+  },
+  "currentNote": "笔记同步助手/2026-06-15/OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘 1.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 46778,
+    "cacheCreationInputTokens": 939,
+    "cacheReadInputTokens": 175795,
+    "contextWindow": 200000,
+    "contextTokens": 223512,
+    "percentage": 100,
+    "contextWindowIsAuthoritative": true
+  }
+}

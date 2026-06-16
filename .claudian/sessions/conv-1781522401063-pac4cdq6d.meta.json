@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781522401063-pac4cdq6d",
+  "providerId": "claude",
+  "title": "整理以下内容到这篇笔记中：Agent 开源框架",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781522401064,
+  "updatedAt": 1781571043902,
+  "lastResponseAt": 1781522545383,
+  "sessionId": "6f493bdc-8319-40ed-8a4e-c39463e38a30",
+  "providerState": {
+    "providerSessionId": "6f493bdc-8319-40ed-8a4e-c39463e38a30"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 46442,
+    "cacheCreationInputTokens": 27,
+    "cacheReadInputTokens": 35679,
+    "contextWindow": 200000,
+    "contextTokens": 82148,
+    "percentage": 41,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781487440231-a4yyuq33g",
+  "providerId": "claude",
+  "title": "将这篇文章整理到agentscope的笔记中",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781487440231,
+  "updatedAt": 1781509896705,
+  "lastResponseAt": 1781487553108,
+  "sessionId": "d9c70698-0fa3-4d83-9321-8c7ef25119f9",
+  "providerState": {
+    "providerSessionId": "d9c70698-0fa3-4d83-9321-8c7ef25119f9"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 45452,
+    "cacheCreationInputTokens": 2942,
+    "cacheReadInputTokens": 29662,
+    "contextWindow": 200000,
+    "contextTokens": 78056,
+    "percentage": 39,
+    "contextWindowIsAuthoritative": true
+  }
+}

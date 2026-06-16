@@ -155,6 +155,60 @@ print("Corrected sequential multi-agent system compiled successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | Multi-Agent 里角色有了但顺序硬编码。Blackboard **让共享工作区的当前状态决定下一步激活谁** |
+| 它的 State 是什么？ | `BlackboardState`：共享工作台（dict），所有专家围绕这块黑板读写；controller 输出 `next_agent` 字段 |
+| 它的拓扑是什么？ | 持续调度回路：Controller → Specialist → 更新黑板 → Controller → ... |
+| 它的 Router 怎么工作？ | controller 检查黑板当前状态，动态决定下一个激活的专家或 FINISH |
+| 它的失败模式是什么？ | controller 决策不稳定、blackboard 结构变脏、专家间重复劳动、系统容易过度循环 |
+| 什么时候该升级/降级？ | 顺序本来很固定时 Blackboard 是过度设计；只需入口分诊 → [[11 Meta-Controller]] |
+
+![[07-Attachments/all-agentic-architectures/Blackboard拓扑.png]]
+
+### 它真正新增了什么能力？
+
+**持续的、基于中间状态的动态编排。** 控制中心从"预定义工作流"转向"共享状态 + 调度器"。
+
+### agno 实现
+
+```python
+class ControllerDecision(BaseModel):
+    next_agent: str = Field(description="One of ['news', 'technical', 'financial', 'writer', 'FINISH'].")
+    reasoning: str
+
+controller = Agent(name="controller", model=OpenAIChat(id="gpt-5-mini"),
+    response_model=ControllerDecision,
+    instructions="Inspect what is currently on the blackboard and decide which specialist should be called next, or FINISH if the report is ready.")
+
+SPECIALISTS = {"news": news_analyst, "technical": technical_analyst, "financial": financial_analyst, "writer": report_writer}
+
+blackboard_wf = Workflow(
+    name="blackboard",
+    session_state={"user_request": "", "blackboard": {}, "next_agent": None},
+    steps=[
+        Loop(
+            name="bb_loop",
+            steps=[
+                Step(name="controller", executor=controller_step),
+                Step(name="specialist", executor=specialist_step),
+            ],
+            end_condition=bb_loop_done,  # controller 选出 FINISH 就终止
+        ),
+    ],
+)
+```
+
+关键设计：`workflow_session_state["blackboard"]` 是共享数据区，controller 通过 `response_model=ControllerDecision` 输出结构化的调度决策。
+
+---
+
 ## 结论
 
 在此笔记本中，我们实现并纠正了 **Blackboard System**，展示了其相对于顺序多代理架构的显着优势。通过引入共享内存（黑板）和智能的、状态感知的**控制器**，我们创建了一个不仅具有协作性、而且具有自适应性和机会性的系统。

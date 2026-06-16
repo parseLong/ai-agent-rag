@@ -9,7 +9,8 @@ tags:
   - 上下文工程
   - 驾驭工程
 sources:
-  - "[[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘]]"
+  - "[[OpenClaw与Hermes源码架构深度复盘]]"
+  - "[[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘 1]]"
   - "[[OpenClaw架构深度解析]]"
   - "[[Hermes Agent 框架]]"
 ---
@@ -327,8 +328,8 @@ Harness 层：约束 + 对抗性验证 + 纠错（贯穿以上所有层）
 - [[OpenClaw架构深度解析]] — OpenClaw 源码级架构深度解析
 - [[Hermes Agent 框架]] — Hermes 单体架构全貌
 - [[OpenClaw框架]] — OpenClaw 实用部署和使用指南
-- [[驾驭工程]] — 控制层全景：LLM 是引擎，驾驭层是方向盘和安全带
-- [[Harness Engineering深度解析——从有序驾驭无序的工程哲学]] — 六层深度解析
+- [[Harness Engineering]] — 控制层全景：LLM 是引擎，驾驭层是方向盘和安全带
+- [[Harness Engineering深度解析]] — 六层深度解析
 - [[记忆系统]] — 短期5种策略+长期3类架构
 - [[上下文压缩]] — Map-Reduce / Refine / 相关性过滤 / LLM 压缩
 - [[多智能体协作模式]] — 7种核心协作模式

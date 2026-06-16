@@ -173,6 +173,64 @@ if episodic_vector_store and graph:
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 前面所有架构默认当前对话结束后系统基本失忆。用户需要**跨轮记忆**——偏好、讨论历史、长期稳定事实 |
+| 它的 State 是什么？ | 图内状态 + 图外可检索历史状态。Episodic：用户层长期记忆（向量库）；Semantic：结构化知识库（图/KV） |
+| 它的拓扑是什么？ | 生成 → 检索 episodic → 检索 semantic → 增强生成 → 写回 episodic |
+| 它的 Router 怎么工作？ | agno 内置路由：`enable_agentic_memory=True` 自动接上写回链路 |
+| 它的失败模式是什么？ | 错误记忆写入造成长期污染、episodic recall 召回相似但不相关的信息、semantic graph 存入过时事实、记忆让系统更强但也让错误变得持久 |
+| 什么时候该升级？ | 当向量检索只能"找相似"但不能做"关系推理" → [[12 Graph Memory]] |
+
+![[07-Attachments/all-agentic-architectures/Memory工作流.png]]
+
+### 它真正新增了什么能力？
+
+系统的 state 从"图内字段"扩展成：**图内状态 + 图外可检索历史状态。** agent 能力不再只依赖当前上下文窗口，而是依赖它如何从历史里提取相关信息。
+
+### agno 实现
+
+```python
+from agno.memory.v2.memory import Memory
+from agno.memory.v2.db.sqlite import SqliteMemoryDb
+from agno.knowledge.text import TextKnowledgeBase
+from agno.vectordb.lancedb import LanceDb, SearchType
+from agno.embedder.openai import OpenAIEmbedder
+
+# Episodic：用户层长期记忆
+memory = Memory(
+    db=SqliteMemoryDb(table_name="user_memories", db_file="tmp/memory.db"),
+    model=OpenAIChat(id="gpt-5-mini"),
+)
+
+# Semantic：结构化知识库
+knowledge = TextKnowledgeBase(
+    path="data/facts",
+    vector_db=LanceDb(table_name="facts", uri="tmp/lancedb",
+                      search_type=SearchType.hybrid,
+                      embedder=OpenAIEmbedder(id="text-embedding-3-small")),
+)
+
+mem_agent = Agent(
+    model=OpenAIChat(id="gpt-5-mini"),
+    memory=memory,
+    enable_agentic_memory=True,      # agent 可主动写入/检索 episodic
+    enable_user_memories=True,
+    knowledge=knowledge,             # semantic
+    search_knowledge=True,
+)
+```
+
+memory 不再是附加模块，而是主控制流的一部分。`enable_agentic_memory=True` 把整条写回链路自动接上。
+
+---
+
 ## 结论
 
 在这个笔记本中，我们成功构建了一个具有复杂的长期记忆系统的代理。该演示清楚地展示了该架构的强大功能：

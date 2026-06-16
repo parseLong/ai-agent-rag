@@ -127,6 +127,59 @@ print("Monolithic 'generalist' agent compiled successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 单 agent 的 prompt 同时容纳太多角色时产生的**角色冲突**——不是 token 不够，而是角色混杂 |
+| 它的 State 是什么？ | `workflow_session_state` 按角色划分区域（news / tech / fin / final_report），state 开始体现**角色边界** |
+| 它的拓扑是什么？ | 固定流水线：news → tech → fin → writer，或 `Team(mode="coordinate")` leader 调度 |
+| 它的 Router 怎么工作？ | 固定边（`Workflow.steps` 的顺序），或 `Team(mode="coordinate")` 让 leader 固定调度 |
+| 它的失败模式是什么？ | **流程固定**——如果执行到一半发现需要更多新闻背景，固定流水线不会自动返回新闻分析师 |
+| 什么时候该升级？ | 当角色间的先后顺序需要动态决定 → [[07 Blackboard]]；或只需要入口分诊 → [[11 Meta-Controller]] |
+
+![[07-Attachments/all-agentic-architectures/Multi-Agent总览.png]]
+![[07-Attachments/all-agentic-architectures/Multi-Agent-Team.png]]
+
+### 它真正新增了什么能力？
+
+**把一个大 prompt 内部的隐式角色切换，变成多个显式节点。** 工程收益：可以单独调试某个角色、替换某个角色的 prompt、单独评估某个角色输出、给不同角色不同工具。
+
+### agno 实现
+
+```python
+# 方式 1: Workflow + 多个 Agent
+multi_wf = Workflow(
+    name="multi_agent",
+    session_state={},
+    steps=[
+        Step(name="news", executor=news_step),
+        Step(name="tech", executor=tech_step),
+        Step(name="fin", executor=fin_step),
+        Step(name="write", executor=write_step),
+    ],
+)
+
+# 方式 2: Team(mode="coordinate") 让 leader 调度
+from agno.team import Team
+analysts_team = Team(
+    name="analysts",
+    mode="coordinate",
+    model=OpenAIChat(id="gpt-5-mini"),
+    members=[news_analyst, technical_analyst, financial_analyst],
+    instructions=["Route each relevant sub-question to the right analyst.",
+                  "Collect their outputs and synthesize a final investment memo."],
+)
+```
+
+两种方式的区别：`Workflow` 显式控制顺序，`Team(mode="coordinate")` 让 leader 动态调度。
+
+---
+
 ## 结论
 
 在本笔记本中，我们展示了**多代理系统**相对于单个整体代理在复杂、多方面任务方面的明显优势。通过创建一个由专业代理组成的团队，每个代理都有一个专注的角色和角色，并由一名经理来综合他们的工作，我们产生了明显更高质量的最终输出。

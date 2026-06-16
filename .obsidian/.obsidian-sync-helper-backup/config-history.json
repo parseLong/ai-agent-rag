@@ -1,13 +1,13 @@
 [
   {
-    "timestamp": "2026-06-11T09:18:54.501Z",
-    "version": "2.12.0",
+    "timestamp": "2026-06-16T00:46:11.542Z",
+    "version": "2.12.1",
     "settings": {
       "dateHighlightedFormat": "yyyy-MM-dd HH:mm:ss",
       "dateSavedFormat": "yyyy-MM-dd HH:mm:ss",
       "apiKey": "o56E761jO8_sLKtZaWRwDaCSZlMU",
       "filter": "ALL",
-      "syncAt": "2026-06-11T17:18:49.366+08:00",
+      "syncAt": "2026-06-16T08:46:07.546+08:00",
       "customQuery": "in:all",
       "template": "{{{content}}}",
       "highlightOrder": "LOCATION",
@@ -17,12 +17,12 @@
       "filename": "{{{title}}}",
       "filenameDateFormat": "yyyy-MM-dd",
       "attachmentFolder": "笔记同步助手/attachments",
-      "version": "2.12.0",
+      "version": "2.12.1",
       "mergeMode": "messages",
       "messageSortOrder": "desc",
       "messageFolder": "",
       "frequency": 15,
-      "intervalId": 153,
+      "intervalId": 644,
       "frontMatterVariables": [],
       "frontMatterTemplate": "author: {{{author}}}\nsource: {{{siteName}}}\nurl: {{{originalUrl}}}\nsaved: {{{dateSaved}}}\ntags: [笔记同步助手{{#labels}}, {{{name}}}{{/labels}}]",
       "syncOnStart": true,
@@ -54,7 +54,7 @@
       "diaryLinkPrefix": "- ",
       "diaryLinkMaxLength": 0,
       "deviceSyncCursors": {
-        "desktop-mq7tcirc-a6v9": "2026-06-11T17:18:49.366+08:00"
+        "desktop-mq7tcirc-a6v9": "2026-06-16T08:46:07.546+08:00"
       },
       "initialSyncCompleted": true,
       "deviceAutoSync": {
@@ -72,14 +72,14 @@
     }
   },
   {
-    "timestamp": "2026-06-11T08:51:27.571Z",
-    "version": "2.12.0",
+    "timestamp": "2026-06-15T11:32:51.470Z",
+    "version": "2.12.1",
     "settings": {
       "dateHighlightedFormat": "yyyy-MM-dd HH:mm:ss",
       "dateSavedFormat": "yyyy-MM-dd HH:mm:ss",
       "apiKey": "o56E761jO8_sLKtZaWRwDaCSZlMU",
       "filter": "ALL",
-      "syncAt": "2026-06-11T16:51:20.851+08:00",
+      "syncAt": "2026-06-15T19:32:47.192+08:00",
       "customQuery": "in:all",
       "template": "{{{content}}}",
       "highlightOrder": "LOCATION",
@@ -89,12 +89,12 @@
       "filename": "{{{title}}}",
       "filenameDateFormat": "yyyy-MM-dd",
       "attachmentFolder": "笔记同步助手/attachments",
-      "version": "2.12.0",
+      "version": "2.12.1",
       "mergeMode": "messages",
       "messageSortOrder": "desc",
       "messageFolder": "",
       "frequency": 15,
-      "intervalId": 153,
+      "intervalId": 644,
       "frontMatterVariables": [],
       "frontMatterTemplate": "author: {{{author}}}\nsource: {{{siteName}}}\nurl: {{{originalUrl}}}\nsaved: {{{dateSaved}}}\ntags: [笔记同步助手{{#labels}}, {{{name}}}{{/labels}}]",
       "syncOnStart": true,
@@ -126,7 +126,7 @@
       "diaryLinkPrefix": "- ",
       "diaryLinkMaxLength": 0,
       "deviceSyncCursors": {
-        "desktop-mq7tcirc-a6v9": "2026-06-11T16:51:20.851+08:00"
+        "desktop-mq7tcirc-a6v9": "2026-06-15T19:32:47.192+08:00"
       },
       "initialSyncCompleted": true,
       "deviceAutoSync": {
@@ -144,14 +144,14 @@
     }
   },
   {
-    "timestamp": "2026-06-11T03:10:28.003Z",
-    "version": "2.12.0",
+    "timestamp": "2026-06-15T10:33:11.919Z",
+    "version": "2.12.1",
     "settings": {
       "dateHighlightedFormat": "yyyy-MM-dd HH:mm:ss",
       "dateSavedFormat": "yyyy-MM-dd HH:mm:ss",
       "apiKey": "o56E761jO8_sLKtZaWRwDaCSZlMU",
       "filter": "ALL",
-      "syncAt": "2026-06-11T08:46:06.395+08:00",
+      "syncAt": "2026-06-15T18:32:38.831+08:00",
       "customQuery": "in:all",
       "template": "{{{content}}}",
       "highlightOrder": "LOCATION",
@@ -161,12 +161,12 @@
       "filename": "{{{title}}}",
       "filenameDateFormat": "yyyy-MM-dd",
       "attachmentFolder": "笔记同步助手/attachments",
-      "version": "2.12.0",
+      "version": "2.12.1",
       "mergeMode": "messages",
       "messageSortOrder": "desc",
       "messageFolder": "",
       "frequency": 15,
-      "intervalId": 153,
+      "intervalId": 644,
       "frontMatterVariables": [],
       "frontMatterTemplate": "author: {{{author}}}\nsource: {{{siteName}}}\nurl: {{{originalUrl}}}\nsaved: {{{dateSaved}}}\ntags: [笔记同步助手{{#labels}}, {{{name}}}{{/labels}}]",
       "syncOnStart": true,
@@ -198,7 +198,7 @@
       "diaryLinkPrefix": "- ",
       "diaryLinkMaxLength": 0,
       "deviceSyncCursors": {
-        "desktop-mq7tcirc-a6v9": "2026-06-11T08:46:06.395+08:00"
+        "desktop-mq7tcirc-a6v9": "2026-06-15T18:32:38.831+08:00"
       },
       "initialSyncCompleted": true,
       "deviceAutoSync": {
@@ -216,14 +216,14 @@
     }
   },
   {
-    "timestamp": "2026-06-11T01:03:49.877Z",
-    "version": "2.11.1",
+    "timestamp": "2026-06-15T08:52:06.922Z",
+    "version": "2.12.1",
     "settings": {
       "dateHighlightedFormat": "yyyy-MM-dd HH:mm:ss",
       "dateSavedFormat": "yyyy-MM-dd HH:mm:ss",
       "apiKey": "o56E761jO8_sLKtZaWRwDaCSZlMU",
       "filter": "ALL",
-      "syncAt": "2026-06-11T08:46:06.395+08:00",
+      "syncAt": "2026-06-15T16:52:02.100+08:00",
       "customQuery": "in:all",
       "template": "{{{content}}}",
       "highlightOrder": "LOCATION",
@@ -233,12 +233,12 @@
       "filename": "{{{title}}}",
       "filenameDateFormat": "yyyy-MM-dd",
       "attachmentFolder": "笔记同步助手/attachments",
-      "version": "2.11.1",
+      "version": "2.12.1",
       "mergeMode": "messages",
       "messageSortOrder": "desc",
       "messageFolder": "",
       "frequency": 15,
-      "intervalId": 770,
+      "intervalId": 644,
       "frontMatterVariables": [],
       "frontMatterTemplate": "author: {{{author}}}\nsource: {{{siteName}}}\nurl: {{{originalUrl}}}\nsaved: {{{dateSaved}}}\ntags: [笔记同步助手{{#labels}}, {{{name}}}{{/labels}}]",
       "syncOnStart": true,
@@ -270,7 +270,7 @@
       "diaryLinkPrefix": "- ",
       "diaryLinkMaxLength": 0,
       "deviceSyncCursors": {
-        "desktop-mq7tcirc-a6v9": "2026-06-11T08:46:06.395+08:00"
+        "desktop-mq7tcirc-a6v9": "2026-06-15T16:52:02.100+08:00"
       },
       "initialSyncCompleted": true,
       "deviceAutoSync": {
@@ -288,14 +288,14 @@
     }
   },
   {
-    "timestamp": "2026-06-10T11:09:04.817Z",
-    "version": "2.11.1",
+    "timestamp": "2026-06-15T08:04:25.416Z",
+    "version": "2.12.1",
     "settings": {
       "dateHighlightedFormat": "yyyy-MM-dd HH:mm:ss",
       "dateSavedFormat": "yyyy-MM-dd HH:mm:ss",
       "apiKey": "o56E761jO8_sLKtZaWRwDaCSZlMU",
       "filter": "ALL",
-      "syncAt": "2026-06-10T19:08:53.554+08:00",
+      "syncAt": "2026-06-15T16:01:09.996+08:00",
       "customQuery": "in:all",
       "template": "{{{content}}}",
       "highlightOrder": "LOCATION",
@@ -305,12 +305,12 @@
       "filename": "{{{title}}}",
       "filenameDateFormat": "yyyy-MM-dd",
       "attachmentFolder": "笔记同步助手/attachments",
-      "version": "2.11.1",
+      "version": "2.12.1",
       "mergeMode": "messages",
       "messageSortOrder": "desc",
       "messageFolder": "",
       "frequency": 15,
-      "intervalId": 770,
+      "intervalId": 644,
       "frontMatterVariables": [],
       "frontMatterTemplate": "author: {{{author}}}\nsource: {{{siteName}}}\nurl: {{{originalUrl}}}\nsaved: {{{dateSaved}}}\ntags: [笔记同步助手{{#labels}}, {{{name}}}{{/labels}}]",
       "syncOnStart": true,
@@ -342,7 +342,7 @@
       "diaryLinkPrefix": "- ",
       "diaryLinkMaxLength": 0,
       "deviceSyncCursors": {
-        "desktop-mq7tcirc-a6v9": "2026-06-10T19:08:53.554+08:00"
+        "desktop-mq7tcirc-a6v9": "2026-06-15T16:01:09.996+08:00"
       },
       "initialSyncCompleted": true,
       "deviceAutoSync": {

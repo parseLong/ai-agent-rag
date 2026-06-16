@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781499912100-ygomtghr0",
+  "providerId": "claude",
+  "title": "整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781499912100,
+  "updatedAt": 1781509289566,
+  "lastResponseAt": 1781500393992,
+  "sessionId": "b70d6c68-eb1e-4bc0-8ec0-306d72802de8",
+  "providerState": {
+    "providerSessionId": "b70d6c68-eb1e-4bc0-8ec0-306d72802de8"
+  },
+  "currentNote": "笔记同步助手/2026-06-15/2026过半：一万字，把这半年AI发生的事讲明白.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 46504,
+    "cacheCreationInputTokens": 27,
+    "cacheReadInputTokens": 88079,
+    "contextWindow": 200000,
+    "contextTokens": 134610,
+    "percentage": 67,
+    "contextWindowIsAuthoritative": true
+  }
+}

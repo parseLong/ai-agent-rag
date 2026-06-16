@@ -82,19 +82,19 @@ Runtime Workspace
 | [[系统提示词工程\|Prompt]] | 渐进式加载的文件系统依托于 Runtime |
 | [[Skills技能\|Tools]] | CLI 和 Script 的执行环境就是 Runtime |
 | [[记忆系统\|Memory]] | 文件系统化记忆的存储载体就是 Runtime |
-| [[驾驭工程\|Harness]] | Runtime 是 Harness 中安全隔离和权限控制的物理实现 |
+| [[Harness Engineering\|Harness]] | Runtime 是 Harness 中安全隔离和权限控制的物理实现 |
 
 ---
 
 ## 📝 个人笔记
 
-Runtime 的出现标志着 Agent 从"纯推理系统"到"完整工作系统"的质变。一个没有 Runtime 的 Agent 只能回答问题；有了 Runtime 的 Agent 能真正执行任务、积累经验、自我进化。Runtime 和 [[驾驭工程]] 的关系值得深思：Harness 是"逻辑层面的驾驭"，Runtime 是"物理层面的驾驭"——两者共同构成了 Agent 的安全边界。
+Runtime 的出现标志着 Agent 从"纯推理系统"到"完整工作系统"的质变。一个没有 Runtime 的 Agent 只能回答问题；有了 Runtime 的 Agent 能真正执行任务、积累经验、自我进化。Runtime 和 [[Harness Engineering]] 的关系值得深思：Harness 是"逻辑层面的驾驭"，Runtime 是"物理层面的驾驭"——两者共同构成了 Agent 的安全边界。
 
 ---
 
 ## 🔗 关联知识
 
-- **前置概念**：[[智能体（Agent）]]、[[驾驭工程]]
+- **前置概念**：[[智能体（Agent）]]、[[Harness Engineering]]
 - **技术实现**：[[Kubernetes]]、Docker
 - **相关模块**：[[系统提示词工程]]、[[Skills技能]]、[[记忆系统]]
 - **演进背景**：[[Agent技术范式演变（2023-2026）]]

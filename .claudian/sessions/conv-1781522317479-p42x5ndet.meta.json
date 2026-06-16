@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781522317479-p42x5ndet",
+  "providerId": "claude",
+  "title": "整理以下内容到这篇笔记中：",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781522317479,
+  "updatedAt": 1781570980614,
+  "lastResponseAt": 1781522501794,
+  "sessionId": "8fe5f1fb-5c1d-40f5-8c02-71e959f86c54",
+  "providerState": {
+    "providerSessionId": "8fe5f1fb-5c1d-40f5-8c02-71e959f86c54"
+  },
+  "currentNote": "04-Permanent/核心技术/记忆与检索/RAG.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 46112,
+    "cacheCreationInputTokens": 36530,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 82642,
+    "percentage": 41,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -155,6 +155,73 @@ print("Basic Planner-Executor agent compiled successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | Planning 默认世界是稳定的，但真实世界不是。PEV 要**不要把执行结果默认为真，而要显式验证** |
+| 它的 State 是什么？ | 新增 `VerificationResult`（is_successful + reasoning），图结构从 `plan → execute → next step` 变成 `plan → execute → verify → (continue | replan | finish)` |
+| 它的拓扑是什么？ | Plan → Loop(Execute → Verify → Router) → Synthesize，Router 可重定向到 replan |
+| 它的 Router 怎么工作？ | `pev_router`：根据 verdict 决定——成功继续、失败重试、多次失败则 replan |
+| 它的失败模式是什么？ | 额外成本高、verifier 本身可能误判、过度验证会拖慢系统、某些任务里"验证"本身比"执行"更难 |
+| 什么时候该升级？ | 如果问题不是"执行步骤会不会失败"，而是"一个 agent 不该包揽所有认知角色" → [[05 Multi-Agent Systems]] |
+
+![[07-Attachments/all-agentic-architectures/PEV拓扑.png]]
+
+### 它真正带来的系统收益
+
+PEV 的本质是：**让错误不再静默传播。** 在普通 Planning 里，一次失败可能污染整个剩余流程；在 PEV 里，失败在局部被识别，并被重定向回 re-plan 路径。
+
+### agno 实现
+
+```python
+from agno.workflow.v2 import Router
+
+class VerificationResult(BaseModel):
+    is_successful: bool = Field(description="True if the tool execution was successful and the data is valid.")
+    reasoning: str = Field(description="Reasoning for the verification decision.")
+
+verifier = Agent(name="verifier", model=OpenAIChat(id="gpt-5-mini"),
+    response_model=VerificationResult,
+    instructions="Given a sub-question and the raw tool observation, decide if the observation actually answers the sub-question.")
+
+def pev_router(step_input):
+    state = step_input.workflow_session_state
+    if not state["plan"]:
+        return [noop_step]
+    if not state["last_verdict"].is_successful and state["retries"] >= 2:
+        state["retries"] = 0
+        return [replan_step]
+    return [noop_step]
+
+pev_wf = Workflow(
+    name="pev",
+    session_state={"plan": [], "intermediate": [], "retries": 0,
+                   "last_q": "", "last_obs": "", "last_verdict": None},
+    steps=[
+        Step(name="plan", executor=plan_step),
+        Loop(
+            name="pev_loop",
+            steps=[
+                Step(name="pev_execute", executor=pev_execute),
+                Step(name="pev_verify", executor=pev_verify),
+                Router(name="decide_next", selector=pev_router),
+            ],
+            end_condition=pev_loop_done,
+        ),
+        Step(name="synthesize", executor=synth_step),
+    ],
+)
+```
+
+关键设计：`Router` 根据结构化 `VerificationResult` 做条件路由，这是验证被提升为控制流一等公民的具体体现。
+
+---
+
 ## 结论
 
 在此笔记本中，我们实现了 **Planner → Executor → Verifier** 架构，并展示了与简单的 Planner-Executor 模型相比其卓越的鲁棒性。通过引入专用的验证器节点，我们为代理提供了一个关键的“免疫系统”，可以检测并从可能对任务造成致命影响的故障中恢复。

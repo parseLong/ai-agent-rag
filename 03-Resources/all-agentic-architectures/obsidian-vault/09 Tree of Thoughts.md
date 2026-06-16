@@ -163,6 +163,67 @@ print("Puzzle environment defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 真正困难的问题不是"链不够长"，而是"路径会分叉且需要回溯" → **把推理从单路径生成升级成对候选路径空间的搜索** |
+| 它的 State 是什么？ | `active_paths: List[List[PuzzleState]]`——state 的单位不再是"一个当前答案"，而是"多条候选路径" |
+| 它的拓扑是什么？ | 搜索树：展开 → 评分 → 剪枝 → 继续展开 |
+| 它的 Router 怎么工作？ | LLM 只负责生成候选动作，**搜索控制交给代码**——不要把搜索控制交给 LLM |
+| 它的失败模式是什么？ | 组合爆炸——ToT 不是通用架构，只该用于"必须回溯和搜索"的专用场景 |
+| 什么时候该升级？ | ToT 本身是求解范式切换，不是在现有控制流上加模块 |
+
+![[07-Attachments/all-agentic-architectures/ToT拓扑.png]]
+
+### 它真正新增了什么能力？
+
+不是"让模型想更多"，而是：**把推理问题转写成搜索问题。** ReAct、Planning 做控制流设计，ToT 做搜索空间设计。
+
+### agno 实现
+
+```python
+class PuzzleState(BaseModel):
+    left_bank: frozenset = Field(default_factory=lambda: frozenset({"wolf", "goat", "cabbage"}))
+    right_bank: frozenset = Field(default_factory=frozenset)
+    boat_location: str = "left"
+    move_description: str = "Initial state."
+
+    def is_valid(self) -> bool:
+        dangerous = [("wolf", "goat"), ("goat", "cabbage")]
+        unguarded = self.left_bank if self.boat_location == "right" else self.right_bank
+        return not any({a, b}.issubset(unguarded) for a, b in dangerous)
+
+    def is_goal(self) -> bool:
+        return self.right_bank == frozenset({"wolf", "goat", "cabbage"})
+
+proposer = Agent(name="proposer", model=OpenAIChat(id="gpt-5-mini"),
+    response_model=Proposal,
+    instructions="Given the current state, propose up to 3 distinct next moves.")
+
+# 纯程序化搜索：LLM 提供建议，代码保证搜索正确性
+def tot_solve(initial: PuzzleState, max_depth: int = 10):
+    active_paths = [[initial]]
+    for _ in range(max_depth):
+        new_paths = []
+        for path in active_paths:
+            for nxt in expand(path[-1]):
+                if nxt in path: continue
+                new_path = path + [nxt]
+                if nxt.is_goal(): return new_path
+                new_paths.append(new_path)
+        active_paths = new_paths
+    return None
+```
+
+架构判断：LLM 负责 _生成候选动作_，程序化代码负责 _搜索树的扩展和剪枝_。
+
+---
+
 ## 结论
 
 在本笔记本中，我们实现了一个**思想树**代理来解决经典的逻辑难题。我们证明，通过将问题转换为状态空间并系统地搜索它，代理可以达到简单的单遍推理方法不可能达到的鲁棒性和准确性水平。

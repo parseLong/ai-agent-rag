@@ -118,6 +118,55 @@ print("Dry-run capable SocialMediaAPI tool defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 如果 agent 会发邮件、发帖、下单、删数据，核心问题是：**它在执行前能不能被拦住** |
+| 它的 State 是什么？ | `approved: bool`——preview 模式结果 + 人工审批决策 + commit 执行结果 |
+| 它的拓扑是什么？ | Propose → Approve → Commit（三步闸门） |
+| 它的 Router 怎么工作？ | 工具本身带 `dry_run` 参数控制模式切换；Workflow 里显式插入人工审批 step |
+| 它的失败模式是什么？ | 人工审批瓶颈、预演和真实执行环境不一致、preview 足够详细反而带来信息泄漏风险 |
+| 什么时候搭配使用？ | Dry-Run 解决外部副作用，[[17 Reflexive Metacognitive]] 解决内部边界感知——最好一起出现 |
+
+![[07-Attachments/all-agentic-architectures/Dry-Run与Metacognitive总览.png]]
+![[07-Attachments/all-agentic-architectures/Dry-Run流程.png]]
+
+### 它真正新增了什么能力？
+
+不是更智能，而是：**让副作用在控制流上变成可审批对象。** 很多 agent 系统的问题不在 reasoning，而在 side effects。Dry-Run 把它显式纳入架构。
+
+### agno 实现
+
+```python
+def publish_post(content: str, hashtags: List[str], dry_run: bool = True) -> str:
+    """Publish a social media post. If dry_run=True, only preview; no side effects."""
+    if dry_run:
+        return f"[DRY RUN] Would publish: {content}"
+    return f"[LIVE] Published id={hashlib.md5(full.encode()).hexdigest()[:8]}"
+
+proposer = Agent(model=OpenAIChat(id="gpt-5-mini"),
+    tools=[publish_post],
+    instructions="When asked to post, FIRST call publish_post with dry_run=True to preview. After the preview, stop and wait for human approval.")
+
+dryrun_wf = Workflow(
+    name="dryrun",
+    steps=[
+        Step(name="propose", executor=propose_step),
+        Step(name="approve", executor=approve_step),    # 人工审批闸门
+        Step(name="commit", executor=commit_step),      # 只在 approved=True 时执行
+    ],
+)
+```
+
+关键设计：工具带 `dry_run` 参数、Workflow 显式插入人工审批 step——副作用成为控制流上的可审批对象。
+
+---
+
 ## 结论
 
 在此笔记本中，我们构建了完整的**可观察性和试运行线束**。这种架构不仅仅是一个功能，而且是部署与现实世界交互的代理的基本理念。通过强制执行`propose -> review -> execute`循环，我们获得了重要的好处：

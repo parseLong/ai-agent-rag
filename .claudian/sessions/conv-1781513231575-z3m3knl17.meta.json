@@ -1,0 +1,24 @@
+{
+  "id": "conv-1781513231575-z3m3knl17",
+  "providerId": "claude",
+  "title": "深度整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781513231575,
+  "updatedAt": 1781522373946,
+  "lastResponseAt": 1781520527175,
+  "sessionId": "a0f062d8-6be6-408e-8d25-27cbae7584f0",
+  "providerState": {
+    "providerSessionId": "a0f062d8-6be6-408e-8d25-27cbae7584f0"
+  },
+  "currentNote": "笔记同步助手/2026-06-15/腾讯云Agent Memory节省61% Token提升52%成功率的诀窍：Mermaid无限画布×上下文卸载.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 52585,
+    "cacheCreationInputTokens": 173,
+    "cacheReadInputTokens": 119583,
+    "contextWindow": 200000,
+    "contextTokens": 172341,
+    "percentage": 86,
+    "contextWindowIsAuthoritative": true
+  }
+}

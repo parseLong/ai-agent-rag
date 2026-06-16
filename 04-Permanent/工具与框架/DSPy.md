@@ -94,7 +94,7 @@ optimized_rag = optimizer.compile(RAGModule(), trainset=my_trainset)
 - [[ReAct 范式]] — DSPy 可以优化 ReAct 的 prompt 配置
 - [[Harness Engineering 工程]] — DSPy compiler 属于 Eval + Optimization 层面
 - [[大语言模型]] — DSPy 编译出的 prompt 适配特定 LLM
-- [[上下文工程]] — DSPy 自动决定 context 中放什么信息
+- [[Context Engineering]] — DSPy 自动决定 context 中放什么信息
 
 ## 🏷️ 标签
 

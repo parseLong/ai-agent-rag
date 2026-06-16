@@ -189,6 +189,56 @@ print("Cellular Automata environment defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 前面所有架构都默认存在一个中心 agent、一个主控制流、一个 orchestrator。CA 彻底打破这个前提：**有些问题根本不需要中心规划** |
+| 它的 State 是什么？ | 每个 CellAgent 的局部状态（type + pathfinding_value），没有全局 state |
+| 它的拓扑是什么？ | 网格：每个单元只看四邻，同步演化 |
+| 它的 Router 怎么工作？ | 没有 router——每个格子根据邻居状态独立执行局部规则 |
+| 它的失败模式是什么？ | 局部规则设计不当、系统收敛慢、涌现出错误的全局结构 |
+| 什么时候该用？ | 寻路、扩散、空间优化等适合用局部规则产生全局行为的场景 |
+
+### 它和前面所有架构最大的区别
+
+LLM 退出了执行主回路，它最多负责规则设计、参数选择、系统解释，真正的求解过程由大量局部节点同步演化完成。整个范式从**中心控制转向分布式涌现**。
+
+### agno 实现
+
+```python
+class CellAgent(BaseModel):
+    type: str  # 'EMPTY' | 'OBSTACLE' | 'GOAL'
+    pathfinding_value: float = float("inf")
+
+    def update(self, neighbors: List["CellAgent"]):
+        if self.type == "OBSTACLE": return
+        if self.type == "GOAL":
+            self.pathfinding_value = 0
+            return
+        m = min((n.pathfinding_value for n in neighbors), default=float("inf"))
+        self.pathfinding_value = min(self.pathfinding_value, m + 1)
+
+def run_ca(grid, steps=50):
+    for _ in range(steps):
+        snapshot = [[copy.deepcopy(c) for c in row] for row in grid]
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
+                grid[r][c].update(neighbors_of(snapshot, r, c))
+
+# LLM 只负责规则设计
+rule_designer = Agent(name="rule_designer", model=OpenAIChat(id="gpt-5-mini"),
+    instructions="You design local update rules for a cellular automaton. Given a high-level objective, propose a minimal Python update function that each cell will execute based only on its neighbors.")
+```
+
+LLM 退到纯"规则设计者/解释者"的位置——真正的求解由程序化并行更新完成。
+
+---
+
 ## 结论
 
 在本笔记本中，我们构建了一个完全实现的**元胞自动机/基于网格的代理系统**。我们超越了理论，为复杂的空间推理问题——仓库物流——实现了一个实用的解决方案。

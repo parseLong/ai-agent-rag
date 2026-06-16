@@ -1,0 +1,23 @@
+{
+  "id": "conv-1781486672299-gp26w8g4i",
+  "providerId": "claude",
+  "title": "/deep-research 帮我找一些关于milvus向量数据库的底层原理，补充完善一下这篇笔记",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781486672309,
+  "updatedAt": 1781499901292,
+  "lastResponseAt": 1781491415583,
+  "sessionId": "eca9a28c-2686-48ae-aabb-802c648bf6e3",
+  "providerState": {
+    "providerSessionId": "eca9a28c-2686-48ae-aabb-802c648bf6e3"
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 54058,
+    "cacheCreationInputTokens": 9453,
+    "cacheReadInputTokens": 58716,
+    "contextWindow": 200000,
+    "contextTokens": 122227,
+    "percentage": 61,
+    "contextWindowIsAuthoritative": true
+  }
+}

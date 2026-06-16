@@ -132,6 +132,58 @@ print("Specialist analyst agents defined successfully.")
 
 ---
 
+## 控制流视角（agno 实现）
+
+> 来自 [[Agent架构演化总览]] 的控制流分析框架
+
+### 六问拆解
+
+| 问题 | 回答 |
+|---|---|
+| 它要解决什么问题？ | 前面的多 agent 基本都在解决"分工"问题。Ensemble 解决的是：**同一个问题，单个 agent 的结论不够可靠** |
+| 它的 State 是什么？ | `views` dict——各分支并发写入各自的视角，aggregator 融合后输出结构化的 `FinalRecommendation` |
+| 它的拓扑是什么？ | fan-out / fan-in：多个分析师并行 → CIO 融合 |
+| 它的 Router 怎么工作？ | 没有 router——所有分析师同时收到同一问题，结果自然汇聚 |
+| 它的失败模式是什么？ | 成本线性增长、多 agent 可能共享同样偏见、aggregator 可能强行合并不该合并的冲突、"综合意见"可能掩盖关键分歧 |
+| 什么时候用？ | 高风险判断、事实核查、投资建议——凡是不想把决定押在一次输出上的场景 |
+
+![[07-Attachments/all-agentic-architectures/Ensemble拓扑.png]]
+
+### 它和 Multi-Agent 到底差在哪？
+
+- **Multi-Agent**：不同 agent 做不同子任务 → 分工
+- **Ensemble**：不同 agent 分析同一个问题 → 冗余
+
+### 它真正新增了什么能力？
+
+**用多视角和冗余来降低单次推理偏差。** ensemble 的关键不是"取平均"，而是**保留冲突信息并解释冲突**——这就是为什么 `FinalRecommendation` 里必须有 `identified_risks`。
+
+### agno 实现
+
+```python
+from agno.workflow.v2 import Workflow, Step, Parallel
+
+ensemble_wf = Workflow(
+    name="ensemble",
+    session_state={"views": {}},
+    steps=[
+        Parallel(
+            name="analysts",
+            steps=[
+                Step(name="bullish", executor=run_one(bullish)),
+                Step(name="value", executor=run_one(value)),
+                Step(name="quant", executor=run_one(quant)),
+            ],
+        ),
+        Step(name="cio_synth", executor=aggregate_step),
+    ],
+)
+```
+
+`Parallel` 做 fan-out，多个 agent 并发执行；aggregator step 做 fan-in，结构化输出确保冲突不被掩盖。
+
+---
+
 ## 结论
 
 在本笔记本中，我们实现了一个全面且复杂的**并行探索+集成决策**代理。通过模拟由不同专家和最终决策者组成的委员会，我们建立了一个擅长解​​决模糊、高风险问题的系统。

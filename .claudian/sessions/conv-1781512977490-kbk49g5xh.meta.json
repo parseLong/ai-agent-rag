@@ -1,0 +1,34 @@
+{
+  "id": "conv-1781512977490-kbk49g5xh",
+  "providerId": "claude",
+  "title": "深度整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781512977490,
+  "updatedAt": 1781513604343,
+  "lastResponseAt": 1781513563667,
+  "sessionId": "a452079f-47ca-4e6a-9025-aed7072f56cd",
+  "providerState": {
+    "providerSessionId": "a452079f-47ca-4e6a-9025-aed7072f56cd",
+    "subagentData": {
+      "toolu_53773ba2146a4ea78f603b4a": {
+        "id": "toolu_53773ba2146a4ea78f603b4a",
+        "description": "Explore vault MOC and related notes",
+        "prompt": "Search this Obsidian vault for:\n1. The main MOC file \"MOCs/AI Agent 知识图谱.md\" - read its full content\n2. Any existing notes related to \"Harness Engineering\", \"知识管理\", \"知识沉淀\", \"上下文工程\", \"Agent 编排\", \"CLAUDE.md\" in the vault\n3. The \"MOCs/标签体系.md\" file\n4. Any notes in 04-Permanent folder related to AI Agent concepts\n\nReturn a summary of what you find - file paths, key topics covered, and any gaps that the new article could fill.",
+        "status": "completed",
+        "toolCalls": [],
+        "isExpanded": false,
+        "result": "API Error: 400 event:error\ndata:{\"code\":\"InvalidParameter\",\"message\":\"<400> InternalError.Algo.InvalidParameter: The value of the enable_thinking parameter is restricted to True.\",\"request_id\":\"c6d08c46-5895-9cad-8eb8-7a5cdac020a9\"}"
+      }
+    }
+  },
+  "currentNote": "笔记同步助手/2026-06-15/Harness不是目的，知识才是护城河 —— 一个AI工程交付团队的知识沉淀实践.md",
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 45017,
+    "cacheCreationInputTokens": 330,
+    "cacheReadInputTokens": 32881,
+    "contextWindow": 200000,
+    "contextTokens": 78228,
+    "percentage": 39
+  }
+}

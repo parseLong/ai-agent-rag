@@ -128,7 +128,7 @@ interface ContextEngine {
 
 ## 关联知识
 
-- [[上下文工程]] — GSSC 是上下文工程的核心执行模式
+- [[Context Engineering]] — GSSC 是上下文工程的核心执行模式
 - [[上下文注入]] — Gather 和 Structure 阶段涉及注入设计
 - [[上下文压缩]] — Compress 阶段的详细实现
 - [[上下文窗口管理]] — Select 阶段的核心约束是窗口限制
@@ -142,4 +142,4 @@ interface ContextEngine {
 - [[第九章 上下文工程]] — §9.3 ContextBuilder 完整实现
 - [[万字干货：理解 Harness Engineering，看这一篇就够了]] — Token 转化流水线
 - [[Claude Code 源码架构]] — 消息组装管道与 System Prompt 装配
-- [[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘]] — §6.6 Context Engine 契约
+- [[OpenClaw与Hermes：源码里的 AI Agent 架构知识大复盘 1]] — §6.6 Context Engine 契约

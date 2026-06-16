@@ -222,7 +222,7 @@ MCP 提供四类能力，远超 Function Calling 的单一函数调用：
 - **演进方向**：[[MCP]] — Function Calling的标准化升级版
 - **应用范式**：[[ReAct 范式]] — Function Calling是ReAct中"Act"的具体实现
 - **管理策略**：[[Skills技能]] — 用Skill渐进式加载解决工具过多问题
-- **安全层面**：[[驾驭工程]] — 工具调用的权限检查和自动修复属于Harness
+- **安全层面**：[[Harness Engineering]] — 工具调用的权限检查和自动修复属于Harness
 - **通信协议**：[[智能体通信协议]] — Function Calling在协议层级中的定位
 
 ## 📝 个人笔记

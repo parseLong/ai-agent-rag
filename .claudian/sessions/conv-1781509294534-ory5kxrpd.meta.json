@@ -1,0 +1,34 @@
+{
+  "id": "conv-1781509294534-ory5kxrpd",
+  "providerId": "claude",
+  "title": "深度整理这篇文章",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1781509294534,
+  "updatedAt": 1781513237353,
+  "lastResponseAt": 1781510780168,
+  "sessionId": "5876ec61-a4da-4f4c-9e99-3a5742ce48cb",
+  "providerState": {
+    "providerSessionId": "5876ec61-a4da-4f4c-9e99-3a5742ce48cb",
+    "subagentData": {
+      "toolu_9fd85f29510949539be446f4": {
+        "id": "toolu_9fd85f29510949539be446f4",
+        "description": "Explore vault structure and MOC",
+        "prompt": "Explore the vault at D:\\ai-graph-rag\\AI Agent知识图谱 to understand:\n1. The MOCs folder - read AI Agent 知识图谱.md and 标签体系.md\n2. Check 04-Permanent folder for any existing notes related to: context compression, Agent, memory systems, Claude Code, Codex, Cline, Cursor, Amp, MemGPT\n3. Check 03-Resources for any related content\n4. Check 00-Inbox for any related content\n5. List the top-level folder structure\n\nBe thorough - search for keywords like \"压缩\", \"上下文\", \"context\", \"compaction\", \"摘要\", \"Agent\", \"Claude Code\", \"Codex\"",
+        "status": "completed",
+        "toolCalls": [],
+        "isExpanded": false,
+        "result": "API Error: 400 event:error\ndata:{\"code\":\"InvalidParameter\",\"message\":\"<400> InternalError.Algo.InvalidParameter: The value of the enable_thinking parameter is restricted to True.\",\"request_id\":\"9afdc11f-e9ae-9073-b0c1-3483fd2baa14\"}"
+      }
+    }
+  },
+  "usage": {
+    "model": "glm-5.1",
+    "inputTokens": 50908,
+    "cacheCreationInputTokens": 116899,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 167807,
+    "percentage": 84,
+    "contextWindowIsAuthoritative": true
+  }
+}

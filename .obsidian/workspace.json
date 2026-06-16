@@ -4,24 +4,81 @@
     "type": "split",
     "children": [
       {
-        "id": "3c37be42be0ba033",
+        "id": "3184710ed1014c61",
         "type": "tabs",
         "children": [
           {
-            "id": "8d221187927a6e46",
+            "id": "2c6a9f1860028083",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03-Resources/智能体基础/万字详解面试题库｜Agent篇.md",
+                "file": "笔记同步助手/2026-06-15/2026过半：一万字，把这半年AI发生的事讲明白.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "万字详解面试题库｜Agent篇"
+              "title": "2026过半：一万字，把这半年AI发生的事讲明白"
+            }
+          },
+          {
+            "id": "5c60a2982a4ff631",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MOCs/AI Agent 知识图谱.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "AI Agent 知识图谱"
+            }
+          },
+          {
+            "id": "f2f6ab4fb239d5ff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-Permanent/核心技术/上下文工程/上下文工程三层Stack.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "上下文工程三层Stack"
+            }
+          },
+          {
+            "id": "2dfaa5482f841368",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-Permanent/工具与框架/context-mode.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "context-mode"
+            }
+          },
+          {
+            "id": "d9d7dfeb22b9f40e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04-Permanent/大语言模型/LLM 训练流程.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LLM 训练流程"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -78,7 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 467.5
+    "width": 342.5
   },
   "right": {
     "id": "a3d99064ca510f5e",
@@ -152,7 +209,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Clippings/从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货）.md",
+                "file": "04-Permanent/大语言模型/LLM 训练流程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -162,7 +219,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "从0到1搭建 Agent ：Agent 原理分析及个人助手实践（长文干货） 的反向链接列表"
+              "title": "LLM 训练流程 的反向链接列表"
             }
           },
           {
@@ -200,7 +257,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 439.5
+    "width": 629.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -219,54 +276,54 @@
       "notehelper:tongbuzhushou": false
     }
   },
-  "active": "8d221187927a6e46",
+  "active": "38feae2021ffe1ef",
   "lastOpenFiles": [
+    "04-Permanent/大语言模型/LLM 基础.md",
+    "04-Permanent/大语言模型/LLM 训练流程.md",
+    "RLHF.md",
+    "04-Permanent/大语言模型/mHC（多流约束残差连接）.md",
+    "04-Permanent/核心技术/记忆与检索/RAG.md",
     "04-Permanent/综合/杨植麟访谈合集.md",
-    "笔记同步助手/2026-06-11/从0开发大模型的17种Agent架构演进详细拆解.md",
-    "笔记同步助手/2026-06-11/Hermes Agent 满配实战（3万字）：从 Memory、Skill 到多 Agent 协同（上手指南）.md",
-    "笔记同步助手/images/0e5df5f06bea38a9792deae94ff59527_MD5.png",
-    "04-Permanent/工程实践/Harness Engineering 工程.md",
-    "04-Permanent/核心技术/上下文工程/上下文预算与资源分配.md",
-    "04-Permanent/工具与框架/Hermes Agent.md",
-    "04-Permanent/从0到1搭建Agent-深层思想脉络与设计哲学.md",
-    "04-Permanent/工具与框架/Milvus.md",
-    "MOCs/AI Agent 知识图谱.md",
-    "04-Permanent/核心技术/多智能体/多智能体协作.md",
-    "04-Permanent/工具与框架/Hermes Agent.md.tmp.29876.fa867fabaacd",
-    "笔记同步助手/2026-06-10/这大概是我读过关于AI大模型最全面、好读又易懂的文章了.md",
-    "笔记同步助手/images/0a36baa913e1eef54698a6af7f3ba374_MD5.png",
-    "04-Permanent/工程实践/Claude Code 源码设计亮点深度分析.md",
-    "04-Permanent/工程实践/Claude Code 源码架构.md",
-    "MOCs/Claude Code 知识地图.md.tmp.23528.c6cbf67af5c7",
-    "04-Permanent/工程实践/Claude Code 源码设计亮点深度分析.md.tmp.23528.71dcd3797338",
-    "04-Permanent/工程实践/Claude Code 源码架构补充 — 知识图谱与模块细节.md",
-    "笔记同步助手/images/8e1286052211660dda24c41820d660f7_MD5.png",
-    "笔记同步助手/images/ef1fc525b77ef3a21a85da5f1e5a9b18_MD5.png",
-    "笔记同步助手/images/b10e10951506235a63b7eaa26477e16b_MD5.png",
-    "笔记同步助手/images/dc393ad7ead343e251722be8cbec66a1_MD5.png",
-    "笔记同步助手/images/7107f92c1c370b99ed1c29e8257fe737_MD5.png",
-    "笔记同步助手/images/cbd171fe4c444260bc10ba349dc9b90a_MD5.png",
-    "笔记同步助手/images/8c75151bbf207296c2e250b279fd7b11_MD5.png",
-    "笔记同步助手/images/812944959c9b332c323dfa143c8af358_MD5.png",
-    "03-Resources/智能体基础/万字详解面试题库｜Agent篇.md",
-    "03-Resources/智能体基础/从0开发大模型的17种Agent架构演进详细拆解.md",
-    "04-Permanent/工具与框架/CrewAI.md",
-    "03-Resources/综合/万字详解大模型应用发展：RAG、MCP、Agent的爆发之旅.md",
-    "04-Permanent/工程实践/长程Coding自动化实践经验.md",
-    "04-Permanent/大语言模型/DeepResearch.md",
-    "03-Resources/Claude-Code-Best-Practice/01-核心概念与子代理.md",
-    "03-Resources/Awesome Agentic AI/CLI Agent 指南.md",
-    "03-Resources/Awesome Agentic AI/AI Agent 术语表.md",
-    "Stage 7.md",
-    "03-Resources/Awesome Agentic AI/Agent 课程精选.md",
-    "03-Resources/Awesome Agentic AI/Agent 范式全景图.md",
-    "MOCs/Awesome Agentic AI 知识地图.md.tmp.756.06b2af4fe1ca",
-    "04-Permanent/工程实践/Schema 设计速查表.md.tmp.756.423913b14668",
-    "MOCs/AI Agent 知识图谱.md.tmp.23844.323c6e40dedb",
-    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.bca9f30f47ae",
-    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.dd3860dd264d",
-    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.ad408230f0a5",
-    "04-Permanent/工程实践/驾驭工程.md.tmp.23844.7f63f91a5881",
+    "04-Permanent/核心技术/Channel Plugin 25+ Adapter 契约.md",
+    "04-Permanent/大语言模型/注意力机制.md.tmp.17076.0afd1eef4ddc",
+    "04-Permanent/核心技术/CLI Backend双路径执行.md",
+    "04-Permanent/工程实践/TencentDB Agent Memory.md",
+    "04-Permanent/大语言模型/注意力残差机制.md",
+    "笔记同步助手/2026-06-16/AI 不缺智商缺纪律：我的 Harness 工程化实践.md",
+    "04-Permanent/工程实践/Harness Engineering.md.tmp.26232.b3ff984851da",
+    "MOCs/AI Agent 知识图谱.md.tmp.26232.5efc9877099d",
+    "MOCs/AI Agent 知识图谱.md.tmp.26232.b770a1983ffe",
+    "04-Permanent/大语言模型/Muon优化器.md.tmp.17076.188395f973c2",
+    "04-Permanent/工程实践/state.json 契约.md",
+    "04-Permanent/工程实践/state.json 契约.md.tmp.26232.8b6242126483",
+    "04-Permanent/评估与优化/Effective Feedback Compute 验证反馈质量.md",
+    "04-Permanent/大语言模型/MoE架构.md.tmp.17076.583dbdd9c4dc",
+    "04-Permanent/评估与优化/Honesty Gap 诚实度差距.md",
+    "04-Permanent/评估与优化/Honesty Gap 诚实度差距.md.tmp.26232.5b773dfefefc",
+    "04-Permanent/大语言模型/DeepSeek V4 Infra 层优化.md.tmp.17076.be6e5d4d8b5d",
+    "04-Permanent/工程实践/G1-G8 门禁墙参考卡.md",
+    "04-Permanent/工程实践/G1-G8 门禁墙参考卡.md.tmp.26232.63b3b91f6283",
+    "04-Permanent/工程实践/DeepSeek V4 训练与推理框架优化.md",
+    "04-Permanent/大语言模型/FP4量化感知训练.md",
+    "04-Permanent/工程实践/批无关性与计算确定性.md",
+    "04-Permanent/工程实践/TileLang.md",
+    "04-Permanent/工程实践/Harness 四阶段演进实践.md",
+    "04-Permanent/大语言模型/DeepSeek V4 Infra 层优化.md",
+    "04-Permanent/工程实践/Dispatcher 状态机与文件交接.md",
+    "04-Permanent/评估与优化/七维确定性评分.md",
+    "04-Permanent/工程实践/经验三级进化.md",
+    "04-Permanent/工程实践/Agent 遗忘三重根因.md",
+    "04-Permanent/工程实践/Harness 五层架构实践.md",
+    "07-Attachments/harness-practice/自进化闭环.jpg",
+    "07-Attachments/harness-practice/代码正确性评分.jpg",
+    "07-Attachments/harness-practice/七维评分图.jpg",
+    "07-Attachments/harness-practice/三条路对比图.jpg",
+    "07-Attachments/harness-practice/Agent调度编排.jpg",
+    "07-Attachments/harness-practice/减负分层效果.jpg",
+    "07-Attachments/harness-practice/上下文爆炸示意图.jpg",
+    "07-Attachments/harness-practice/四阶段演进图.jpg",
+    "07-Attachments/harness-practice/19节点链与门禁.jpg",
+    "07-Attachments/harness-practice/harness-五层架构图.jpg",
     "未命名.canvas",
     "未命名 1.canvas"
   ]
